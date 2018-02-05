@@ -1,0 +1,99 @@
+<resources>
+    <string name="app_name">Device Book</string>
+    <string name="menu_settings">Settings</string>
+    <string name="homeHeader">Device Book</string>
+    <string name="homeImg">Home Image</string>
+    <string name="homeSubtitle">Booking your repair is now as easy as reading a book</string>
+    <string name="bookButton">Enter</string>
+    <string name="exitButton1">Exit</string>
+    <string name="productHead">Select Your Device</string>
+    <string name="optionsMenu">Options</string>
+    <string name="phone_device">Phones</string>
+    <string name="phone_captio">Mobile Phones</string>
+    <string name="menu_logo">Device Book</string>
+    <string name="makeSubtitle">Select Brand</string>
+    <string name="modelSubtitle">Select Model</string>
+    <string name="faultSubtitle">Fault Description</string>
+    <string name="deviceColorSubtitle">Device Color</string>
+    <string name="pickUpOption">Courier Picks Up</string>
+    <string name="postOption">Post it to us </string>
+    <string name="DeliverySubtitle">How would you like us to recieve your device</string>
+    <string name="continueButton">Continue</string>
+    <string name="tabletPickUp">Courier Pick Up</string>
+    <string name="tabletPost">Post it to us</string>
+    <string name="tabletContinue">Continue</string>
+    <string name="productBanner">Product Banner</string>
+    <string name="productBannerSubtitle">Please select your option</string>
+    <string name="tabletColor">Tablet Color</string>
+    <string name="tabletBrand">Tablet Brand</string>
+    <string name="tabletOperaringSystem">Tablet Operating System</string>
+
+
+    <string-array name="phoneMakes">
+        <item>Phone make</item>
+        <item>Samsung</item>
+        <item>Apple</item>
+
+        <item>Lg</item>
+        <item>Google</item>
+        <item>Sony</item>
+
+    </string-array>
+
+
+    <string-array name="samsungModel">
+        <item>Model</item>
+        <item>Samsung Galaxy S8</item>
+        <item>Samsung Galaxy S7</item>
+        <item>Samsung Galaxy S6</item>
+        <item>Samsung Galaxy S5</item>
+        <item>Samsung Galaxy J5</item>
+        <item>Samsung Galaxy J3</item>
+        <item>Samsung Galaxy A3</item>
+
+    </string-array>
+
+    <string-array name="appleModel">
+        <item>Model</item>
+        <item>Iphone X</item>
+        <item>Iphone 8</item>
+        <item>Iphone 6</item>
+        <item>Iphone 5</item>
+        <item>Iphone 4</item>
+        <item>Iphone SE</item>
+
+    </string-array>
+
+    <string-array name="lgModel">
+        <item>Model</item>
+        <item>Lg k10</item>
+        <item>Lg k8</item>
+        <item>Lg G6</item>
+        <item>Lg G5</item>
+        <item>Lg G4</item>
+
+    </string-array>
+
+    <string-array name="googleModel">
+        <item>Model</item>
+        <item>Google XL 2</item>
+        <item>Google XL</item>
+        <item>Google X 3</item>
+        <item>Google X </item>
+        <item>Google X 2</item>
+        <item>Google X</item>
+
+    </string-array>
+
+    <string-array name="sonyModel">
+        <item>Model</item>
+        <item>Sony XY</item>
+        <item>Sony XZ</item>
+        <item>Sony Z4</item>
+        <item>Sony Z3 </item>
+        <item>Sony Z2</item>
+        <item>Sony Z</item>
+
+    </string-array>
+
+</resources>

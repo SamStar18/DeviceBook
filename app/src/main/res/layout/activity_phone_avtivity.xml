@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.devicebook.devicebook.phone_avtivity">
+
+    <include
+        android:id="@+id/appbar_constraint"
+
+        layout="@layout/drawerlayout"
+         />
+
+    <TextView
+        android:id="@+id/makeSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/makeSubtitle"
+        app:layout_constraintBottom_toTopOf="@+id/phoneMake"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/phoneMake"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="8dp"
+
+        android:layout_marginTop="8dp"
+        android:background="@android:color/darker_gray"
+        android:padding="8dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19" />
+
+    <TextView
+        android:id="@+id/modelSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/modelSubtitle"
+        app:layout_constraintBottom_toTopOf="@+id/phoneModel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneMake"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/phoneModel"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+
+        android:background="@android:color/darker_gray"
+        android:padding="8dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/appbar_constraint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneMake"
+        app:layout_constraintVertical_bias="0.113" />
+
+    <TextView
+        android:id="@+id/faultSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/faultSubtitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneModel"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <Spinner
+        android:id="@+id/faultSpinner"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/darker_gray"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/appbar_constraint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/faultSubtitle"
+        app:layout_constraintVertical_bias="0.012" />
+
+    <TextView
+        android:id="@+id/deviceColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/deviceColorSubtitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/faultSpinner"
+        app:layout_constraintVertical_bias="0.009" />
+
+    <Spinner
+        android:id="@+id/colorSpinner"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="144dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/darker_gray"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deviceColor"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/deliverySubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/DeliverySubtitle"
+        app:layout_constraintBottom_toTopOf="@+id/CollectionOptions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/colorSpinner"
+        app:layout_constraintVertical_bias="0.382" />
+
+    <RadioGroup
+        android:id="@+id/CollectionOptions"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="44dp"
+        android:layout_marginEnd="24dp"
+
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/colorSpinner"
+        app:layout_constraintVertical_bias="0.413">
+
+        <RadioButton
+            android:id="@+id/pickUpOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="@string/pickUpOption"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/postOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="@string/postOption"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/buttonshape2"
+        android:onClick="onContinueButtonPressed"
+        android:padding="10dp"
+        android:text="@string/continueButton"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/CollectionOptions"
+        app:layout_constraintVertical_bias="0.849" />
+
+</android.support.constraint.ConstraintLayout>
