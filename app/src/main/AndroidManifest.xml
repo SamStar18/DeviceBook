@@ -32,11 +32,16 @@
         <activity
             android:name=".phone_avtivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.drawerlayout.noActionBar"> </activity>
-
-        <activity android:name=".tablet_activity"
+            android:theme="@style/AppTheme.drawerlayout.noActionBar"></activity>
+        <activity
+            android:name=".tablet_activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.drawerlayout.noActionBar"></activity>
+        <activity
+            android:name=".productanduserdetails"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.drawerlayout.noActionBar">
+
         </activity>
     </application>
 

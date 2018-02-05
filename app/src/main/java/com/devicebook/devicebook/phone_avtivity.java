@@ -1,5 +1,6 @@
 package com.devicebook.devicebook;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -151,7 +152,7 @@ public class phone_avtivity extends AppCompatActivity {
             return;
         }
         else{
-
+            startActivity(new Intent(phone_avtivity.this,productanduserdetails.class));
         }
 
     }
