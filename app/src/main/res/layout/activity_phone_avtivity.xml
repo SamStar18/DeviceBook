@@ -16,31 +16,32 @@
         android:id="@+id/makeSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="12dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:text="@string/makeSubtitle"
-        app:layout_constraintBottom_toTopOf="@+id/phoneMake"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/deviceBrand"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
-        android:id="@+id/phoneMake"
+        android:id="@+id/deviceBrand"
         android:layout_width="0dp"
-        android:layout_height="42dp"
+        android:layout_height="37dp"
         android:layout_marginBottom="8dp"
-
         android:layout_marginTop="8dp"
         android:background="@android:color/darker_gray"
         android:padding="8dp"
         android:textAlignment="center"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintVertical_bias="0.322" />
 
     <TextView
         android:id="@+id/modelSubtitle"
@@ -51,19 +52,20 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="@string/modelSubtitle"
-        app:layout_constraintBottom_toTopOf="@+id/phoneModel"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/deviceModel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneMake"
+        app:layout_constraintTop_toBottomOf="@+id/deviceBrand"
         app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
-        android:id="@+id/phoneModel"
+        android:id="@+id/deviceModel"
         android:layout_width="0dp"
-        android:layout_height="43dp"
+        android:layout_height="37dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-
+        android:textSize="14sp"
         android:background="@android:color/darker_gray"
         android:padding="8dp"
         android:textAlignment="center"
@@ -71,7 +73,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneMake"
+        app:layout_constraintTop_toBottomOf="@+id/deviceBrand"
         app:layout_constraintVertical_bias="0.113" />
 
     <TextView
@@ -82,19 +84,21 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:textSize="14sp"
         android:text="@string/faultSubtitle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneModel"
+        app:layout_constraintTop_toBottomOf="@+id/deviceModel"
         app:layout_constraintVertical_bias="0.023" />
 
     <Spinner
         android:id="@+id/faultSpinner"
         android:layout_width="0dp"
-        android:layout_height="43dp"
+        android:layout_height="37dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
+        android:textSize="14sp"
         android:background="@android:color/darker_gray"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/appbar_constraint"
@@ -109,6 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
+        android:textSize="14sp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/deviceColorSubtitle"
@@ -121,9 +126,10 @@
     <Spinner
         android:id="@+id/colorSpinner"
         android:layout_width="0dp"
-        android:layout_height="43dp"
+        android:layout_height="37dp"
         android:layout_marginBottom="144dp"
         android:layout_marginTop="8dp"
+        android:textSize="14sp"
         android:background="@android:color/darker_gray"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -141,19 +147,20 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:text="@string/DeliverySubtitle"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/CollectionOptions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/colorSpinner"
-        app:layout_constraintVertical_bias="0.382" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <RadioGroup
         android:id="@+id/CollectionOptions"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"
         android:layout_marginEnd="24dp"
-
+        android:textSize="14sp"
         android:layout_marginTop="24dp"
         android:orientation="horizontal"
         android:textAlignment="center"
@@ -195,7 +202,6 @@
         android:id="@+id/continueButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/buttonshape2"
         android:onClick="onContinueButtonPressed"
@@ -206,8 +212,35 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/CollectionOptions"
-        app:layout_constraintVertical_bias="0.849" />
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/deviceTypeSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/devicetypesubtitle"
+        app:layout_constraintBottom_toTopOf="@+id/deviceType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/appbar_constraint" />
+
+    <Spinner
+        android:id="@+id/deviceType"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/darker_gray"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/makeSubtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

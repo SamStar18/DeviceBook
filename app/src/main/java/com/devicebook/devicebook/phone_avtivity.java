@@ -15,9 +15,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class phone_avtivity extends AppCompatActivity {
-
-    private Spinner phoneMake;
-    private Spinner phoneModel;
+    private Spinner deviceType;
+    private Spinner deviceBrand;
+    private Spinner deviceModel;
     private Spinner faultSpinner;
     private Spinner colorSpinner;
     private RadioGroup collectionOptions;
@@ -30,41 +30,52 @@ public class phone_avtivity extends AppCompatActivity {
         setContentView(R.layout.activity_phone_avtivity);
 
         faultSpinner = (Spinner) findViewById(R.id.faultSpinner);
-        phoneMake = (Spinner) findViewById(R.id.phoneMake);
-        phoneModel = (Spinner) findViewById(R.id.phoneModel);
+        deviceBrand = (Spinner) findViewById(R.id.deviceBrand);
+        deviceModel = (Spinner) findViewById(R.id.deviceModel);
         colorSpinner = (Spinner) findViewById(R.id.colorSpinner);
         collectionOptions = (RadioGroup) findViewById(R.id.CollectionOptions);
         continueButton = (Button) findViewById(R.id.continueButton);
+        deviceType = (Spinner) findViewById(R.id.deviceType);
 
-        final ArrayList<String> makeArray = new ArrayList<String>();
-        Collections.addAll(makeArray, "Select Brand", "Samsung", "Apple", "Lg", "Sony");
+        ArrayList<String> deviceArray = new ArrayList<>();
+        Collections.addAll(deviceArray,"","Phone","Tablet");
+
+        final ArrayList<String>phonebrandArray = new ArrayList<String>();
+        Collections.addAll(phonebrandArray,  "Samsung", "Apple", "Lg", "Sony");
 
         ArrayList<String> faultArray = new ArrayList<>();
         Collections.addAll(faultArray, "", "Speaker Problem", "Will not turn on", "Broken Screen", "Water Damage", "Overheating", "Charging Problem", "Other");
         Collections.sort(faultArray);
+
         ArrayList<String> defaultlist = new ArrayList<>();
-        defaultlist.add("Model");
+        defaultlist.add("");
+
         ArrayList<String> samsungArray = new ArrayList<>();
-        Collections.addAll(samsungArray, "Select Samsung Model", "Samsung Galaxy S8", "Samsung Galaxy S7", "Samsung Galaxy S6", "Samsung Galaxy S5", "Samsung Galaxy A4", "Samsung Galaxy J3");
+        Collections.addAll(samsungArray,  "Samsung Galaxy S8", "Samsung Galaxy S7", "Samsung Galaxy S6", "Samsung Galaxy S5", "Samsung Galaxy A4", "Samsung Galaxy J3");
 
         ArrayList<String> appleArray = new ArrayList<>();
-        Collections.addAll(appleArray, "Select Apple Model", "Iphone X", "Iphone 8", "Iphone 7", "Iphone 6", "Iphone 5", "Iphone SE");
+        Collections.addAll(appleArray,  "Iphone X", "Iphone 8", "Iphone 7", "Iphone 6", "Iphone 5", "Iphone SE");
 
         ArrayList<String> lgArray = new ArrayList<>();
-        Collections.addAll(lgArray, "Select Lg Model", "Lg k10", "Lg k8", "Lg G6", "Lg G5", "Lg G4");
+        Collections.addAll(lgArray,  "Lg k10", "Lg k8", "Lg G6", "Lg G5", "Lg G4");
 
         ArrayList<String> sonyArray = new ArrayList<>();
-        Collections.addAll(sonyArray, "Select Sony Model", "Sony XY", "Sony XZ", "Sony Z4", "Sony Z3", "Sony Z2", "Sony Z");
+        Collections.addAll(sonyArray,  "Sony XY", "Sony XZ", "Sony Z4", "Sony Z3", "Sony Z2", "Sony Z");
 
         ArrayList<String> colorArray = new ArrayList<>();
         Collections.addAll(colorArray, "", "Red", "Black", "White", "Grey", "Rose Gold", "Grey");
         Collections.sort(colorArray);
 
 
-        ArrayAdapter<String> makeAdapter = new ArrayAdapter<String>(
-                this, android.R.layout.simple_spinner_item, makeArray);
+        ArrayAdapter<String>deviceAdapter = new ArrayAdapter<String>(
+                this, android.R.layout.simple_spinner_item,deviceArray);
+        deviceAdapter.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
 
-        makeAdapter.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
+
+        final ArrayAdapter<String> phoneBrandAdapter = new ArrayAdapter<String>(
+                this, android.R.layout.simple_spinner_item, phonebrandArray);
+
+        phoneBrandAdapter.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
 
 
         final ArrayAdapter<String> samsungAdapter = new ArrayAdapter<String>(
@@ -90,36 +101,120 @@ public class phone_avtivity extends AppCompatActivity {
         final ArrayAdapter<String> defaultadapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, defaultlist);
 
-        final ArrayAdapter<String> faultAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, faultArray);
+        ArrayAdapter<String> faultAdapter= new ArrayAdapter<String>(
+                this, android.R.layout.simple_spinner_item,faultArray);
+
         faultAdapter.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
 
-        ArrayAdapter<String> colorAdapter = new ArrayAdapter<String>
-                (this, android.R.layout.simple_spinner_item, colorArray);
+
+
+        ArrayAdapter<String> colorAdapter= new ArrayAdapter<String>(
+                this, android.R.layout.simple_spinner_item,  colorArray);
+
         colorAdapter.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
 
 
-        phoneMake.setAdapter(makeAdapter);
+
+
+
+
+
+
+
+        ArrayList<String> tabletbrandarray = new ArrayList<>();
+        Collections.addAll(tabletbrandarray,"Samsung Tablet","Toshiba Tablet","Apple Tablet","Lg Tablet");
+
+        ArrayList<String> tabletOsArray = new ArrayList<>();
+        Collections.addAll(tabletOsArray,"Windows Os ","Android Os","Linux Os");
+
+        ArrayList<String> appleOsarray = new ArrayList<>();
+        Collections.addAll(appleOsarray ,"IOS 8","IOS 9","IOS 10","IOS 10.5");
+
+
+        final ArrayAdapter<String> tabletbrandAdapter= new ArrayAdapter<String>(
+                this, android.R.layout.simple_spinner_item, tabletbrandarray);
+        tabletbrandAdapter.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
+
+
+
+        final ArrayAdapter<String> tabletosAdapter= new ArrayAdapter<String>(
+                this, android.R.layout.simple_spinner_item, tabletOsArray);
+        tabletosAdapter.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
+
+
+
+        final ArrayAdapter<String> appleosAdapter= new ArrayAdapter<String>(
+                this, android.R.layout.simple_spinner_item, appleOsarray);
+        appleosAdapter.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
+
+        deviceType.setAdapter(deviceAdapter);
         faultSpinner.setAdapter(faultAdapter);
         colorSpinner.setAdapter(colorAdapter);
 
-        phoneMake.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        deviceType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
 
-                String selectedphone = phoneMake.getSelectedItem().toString();
+                String selectedDevice = deviceType.getSelectedItem().toString();
+
+                if(selectedDevice.contentEquals("Phone")){
+                    deviceBrand.setAdapter(phoneBrandAdapter);
+                }
+                else if(selectedDevice.contentEquals("Tablet")){
+                    deviceBrand.setAdapter(tabletbrandAdapter);
+                }
+
+                else
+                    deviceBrand.setAdapter(defaultadapter);
+
+            }
+
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        deviceBrand.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+                String selectedphone = deviceBrand.getSelectedItem().toString();
+
 
                 if (selectedphone.contentEquals("Samsung")) {
 
-                    phoneModel.setAdapter(samsungAdapter);
+                    deviceModel.setAdapter(samsungAdapter);
                 } else if (selectedphone.contentEquals("Apple")) {
-                    phoneModel.setAdapter(appleAdapter);
+                    deviceModel.setAdapter(appleAdapter);
                 } else if (selectedphone.contentEquals("Lg")) {
-                    phoneModel.setAdapter(lgAdapter);
+                    deviceModel.setAdapter(lgAdapter);
                 } else if (selectedphone.contentEquals("Sony")) {
-                    phoneModel.setAdapter(sonyAdapter);
-                } else
-                    phoneModel.setAdapter(defaultadapter);
+                    deviceModel.setAdapter(sonyAdapter);
+                }
+
+                else
+                    deviceModel.setAdapter(defaultadapter);
+
+                String selectedtablet = deviceBrand.getSelectedItem().toString();
+
+                if(selectedtablet.contentEquals("Apple Tablet")){
+                    deviceModel.setAdapter(appleosAdapter);
+                }
+                else if(selectedtablet.contentEquals("Samsung Tablet")){
+                    deviceModel.setAdapter(tabletosAdapter);
+                }
+                else if(selectedtablet.contentEquals("Lg Tablet")){
+                    deviceModel.setAdapter(tabletosAdapter);
+                }
+                else if(selectedtablet.contentEquals("Toshiba Tablet")){
+                    deviceModel.setAdapter(tabletosAdapter);
+                }
+
+
 
             }
 
@@ -145,6 +240,18 @@ public class phone_avtivity extends AppCompatActivity {
         }
         else if(colorSpinner.getSelectedItem().toString().contentEquals("")){
             mytoast.makeText(phone_avtivity.this,"Please Select device color " ,Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else if(deviceType.getSelectedItem().toString().contentEquals("")){
+            mytoast.makeText(phone_avtivity.this,"Please Select device type " ,Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else if(deviceBrand.getSelectedItem().toString().contentEquals("")){
+            mytoast.makeText(phone_avtivity.this,"Please Select device brand " ,Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else if(deviceModel.getSelectedItem().toString().contentEquals("")){
+            mytoast.makeText(phone_avtivity.this,"Please Select device model " ,Toast.LENGTH_SHORT).show();
             return;
         }
         else if(collectionOptions.getCheckedRadioButtonId() == -1){

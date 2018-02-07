@@ -18,7 +18,8 @@ public class Product extends AppCompatActivity {
     GridView gridView;
 
 String listcaption;
-    String phonecaptionlists[] = {"Phone Repair", "Tablets Repair", "Booking Details", "Contact us"};
+    String phonecaptionlists[] = {"Device Repair", "Other Services", "Booking Details", "About Devicebook"};
+
 
     int deviceImages[] = {R.drawable.phonerepair2, R.drawable.tabletrepair, R.drawable.bookingdetails, R.drawable.contactus};
 
@@ -38,17 +39,14 @@ String listcaption;
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
 
-        String mobilephoneselection = adapterView.getItemAtPosition(0).toString();
-        String tabletselection = adapterView.getItemAtPosition(1).toString();
-                String laptopselection = adapterView.getItemAtPosition(2).toString();
-                String gemeselection = adapterView.getItemAtPosition(3).toString();
+        String deviceselection = adapterView.getItemAtPosition(0).toString();
 
-                if(phonecaptionlists[i]  == mobilephoneselection){
+
+
+                if(phonecaptionlists[i]  == deviceselection){
                     startActivity(new Intent(Product.this,phone_avtivity.class));
                 }
-                else if(phonecaptionlists[i] == tabletselection){
-                    startActivity(new Intent(Product.this,tablet_activity.class));
-                }
+
 
 
             }

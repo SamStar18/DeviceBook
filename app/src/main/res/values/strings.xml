@@ -27,6 +27,20 @@
     <string name="tabletColor">Tablet Color</string>
     <string name="tabletBrand">Tablet Brand</string>
     <string name="tabletOperaringSystem">Tablet Operating System</string>
+    <string name="customerDetailsSubtitle">Customer Details</string>
+    <string name="nameSubtitle">Customer\'s Fullname</string>
+    <string name="nameHint">Enter your name</string>
+    <string name="mobileDetails">Contact Number</string>
+    <string name="mobileHint">Enter contact number</string>
+    <string name="customerAddress1">Address line </string>
+    <string name="address1">Enter address</string>
+    <string name="countrySubtitle">Country</string>
+    <string name="citySubtitle">City</string>
+    <string name="city">Enter City</string>
+    <string name="pnuContinue">Continue</string>
+    <string name="summarySubtitle">Booking Summary</string>
+    <string name="devicetypesubtitle">Device Type</string>
+    <string name="emailSubtitle">Email</string>
 
 
     <string-array name="phoneMakes">
