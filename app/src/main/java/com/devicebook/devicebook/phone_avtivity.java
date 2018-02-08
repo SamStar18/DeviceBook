@@ -29,13 +29,13 @@ public class phone_avtivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_avtivity);
 
-        faultSpinner = (Spinner) findViewById(R.id.faultSpinner);
-        deviceBrand = (Spinner) findViewById(R.id.deviceBrand);
-        deviceModel = (Spinner) findViewById(R.id.deviceModel);
-        colorSpinner = (Spinner) findViewById(R.id.colorSpinner);
-        collectionOptions = (RadioGroup) findViewById(R.id.CollectionOptions);
-        continueButton = (Button) findViewById(R.id.continueButton);
-        deviceType = (Spinner) findViewById(R.id.deviceType);
+        faultSpinner = findViewById(R.id.faultSpinner);
+        deviceBrand = findViewById(R.id.deviceBrand);
+        deviceModel = findViewById(R.id.deviceModel);
+        colorSpinner = findViewById(R.id.colorSpinner);
+        collectionOptions = findViewById(R.id.CollectionOptions);
+        continueButton = findViewById(R.id.continueButton);
+        deviceType = findViewById(R.id.deviceType);
 
         ArrayList<String> deviceArray = new ArrayList<>();
         Collections.addAll(deviceArray,"","Phone","Tablet");
@@ -235,31 +235,44 @@ public class phone_avtivity extends AppCompatActivity {
         Toast  mytoast = null;
 
         if(faultSpinner.getSelectedItem().toString().contentEquals("")){
-            mytoast.makeText(phone_avtivity.this,"Please Select a fault " ,Toast.LENGTH_SHORT).show();
+            Toast.makeText(phone_avtivity.this,"Please Select a fault " ,Toast.LENGTH_SHORT).show();
             return;
         }
         else if(colorSpinner.getSelectedItem().toString().contentEquals("")){
-            mytoast.makeText(phone_avtivity.this,"Please Select device color " ,Toast.LENGTH_SHORT).show();
+            Toast.makeText(phone_avtivity.this,"Please Select device color " ,Toast.LENGTH_SHORT).show();
             return;
         }
         else if(deviceType.getSelectedItem().toString().contentEquals("")){
-            mytoast.makeText(phone_avtivity.this,"Please Select device type " ,Toast.LENGTH_SHORT).show();
+            Toast.makeText(phone_avtivity.this,"Please Select device type " ,Toast.LENGTH_SHORT).show();
             return;
         }
         else if(deviceBrand.getSelectedItem().toString().contentEquals("")){
-            mytoast.makeText(phone_avtivity.this,"Please Select device brand " ,Toast.LENGTH_SHORT).show();
+            Toast.makeText(phone_avtivity.this,"Please Select device brand " ,Toast.LENGTH_SHORT).show();
             return;
         }
         else if(deviceModel.getSelectedItem().toString().contentEquals("")){
-            mytoast.makeText(phone_avtivity.this,"Please Select device model " ,Toast.LENGTH_SHORT).show();
+            Toast.makeText(phone_avtivity.this,"Please Select device model " ,Toast.LENGTH_SHORT).show();
             return;
         }
         else if(collectionOptions.getCheckedRadioButtonId() == -1){
-            mytoast.makeText(phone_avtivity.this,"Please Select a collection option " ,Toast.LENGTH_SHORT).show();
+            Toast.makeText(phone_avtivity.this,"Please Select a collection option " ,Toast.LENGTH_SHORT).show();
             return;
         }
         else{
-            startActivity(new Intent(phone_avtivity.this,productanduserdetails.class));
+
+            Intent bookingdetailsintent = new Intent(getApplicationContext(),productanduserdetails.class);
+            bookingdetailsintent.putExtra("csdeviceType",deviceType.getSelectedItem().toString());
+            bookingdetailsintent.putExtra("csmodel",deviceModel.getSelectedItem().toString());
+            bookingdetailsintent.putExtra("csbrand",deviceBrand.getSelectedItem().toString());
+            bookingdetailsintent.putExtra("csfault",faultSpinner.getSelectedItem().toString());
+            bookingdetailsintent.putExtra("cscolor",colorSpinner.getSelectedItem().toString());
+            bookingdetailsintent.putExtra("cscollection",collectionOptions.getCheckedRadioButtonId());
+
+
+
+
+            startActivity(bookingdetailsintent);
+
         }
 
     }

@@ -41,6 +41,45 @@
     <string name="summarySubtitle">Booking Summary</string>
     <string name="devicetypesubtitle">Device Type</string>
     <string name="emailSubtitle">Email</string>
+    <string name="csSumary">Customer Details</string>
+    <string name="bookingDetails">Booking Details</string>
+    <string name="csDetails">Customer Details</string>
+    <string name="csBookingDetails">Booking Details</string>
+    <string name="devicetTypeSummary">Device Type</string>
+    <string name="csDeviceType">Tablet</string>
+    <string name="csNameSummary">Name</string>
+    <string name="csName">Sam</string>
+
+    <string name="csNumber">phoneNumber</string>
+    <string name="csEmail">Email</string>
+
+    <string name="csCity">City</string>
+    <string name="csCountry">Country</string>
+    <string name="csName2">Name:</string>
+    <string name="csPhoneNumber2">Number:</string>
+    <string name="csEmail2">Email:</string>
+
+    <string name="csCity2">City:</string>
+    <string name="csCountry2">Country:</string>
+    <string name="csAddress">Address</string>
+    <string name="csAddress2">Address Line:</string>
+    <string name="customerDetailsSummary">Customer Details</string>
+    <string name="csEditButton">Edit</string>
+    <string name="csBookingSummary">Booking Details</string>
+    <string name="csdeviceType">Device Type</string>
+    <string name="csBrand">Brand</string>
+    <string name="csModel">Model</string>
+    <string name="csfault">Fault</string>
+    <string name="csColor">Color</string>
+    <string name="csRecieveMethod">Recieve Method</string>
+    <string name="csDeviceType2">Device Type</string>
+    <string name="csBrand2">Brand</string>
+    <string name="csModel2">Model</string>
+    <string name="csfault2">Fault</string>
+    <string name="csColor2">Color</string>
+    <string name="csRecieveMethod2">Recieve Method</string>
+    <string name="csEditButton2">Edit</string>
+    <string name="csContinueButton">Contunue</string>
 
 
     <string-array name="phoneMakes">

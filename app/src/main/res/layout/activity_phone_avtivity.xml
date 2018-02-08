@@ -13,6 +13,65 @@
          />
 
     <TextView
+        android:id="@+id/deviceTypeSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/devicetypesubtitle"
+        app:layout_constraintBottom_toTopOf="@+id/deviceType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/appbar_constraint" />
+
+    <Spinner
+        android:id="@+id/deviceType"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/darker_gray"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/makeSubtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/modelSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/modelSubtitle"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/deviceModel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deviceBrand"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/deviceModel"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/darker_gray"
+        android:padding="8dp"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/appbar_constraint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deviceBrand"
+        app:layout_constraintVertical_bias="0.113" />
+
+    <TextView
         android:id="@+id/makeSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,39 +101,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.322" />
-
-    <TextView
-        android:id="@+id/modelSubtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/modelSubtitle"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/deviceModel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deviceBrand"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Spinner
-        android:id="@+id/deviceModel"
-        android:layout_width="0dp"
-        android:layout_height="37dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:textSize="14sp"
-        android:background="@android:color/darker_gray"
-        android:padding="8dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/appbar_constraint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deviceBrand"
-        app:layout_constraintVertical_bias="0.113" />
 
     <TextView
         android:id="@+id/faultSubtitle"
@@ -216,31 +242,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/CollectionOptions"
         app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/deviceTypeSubtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="72dp"
-        android:text="@string/devicetypesubtitle"
-        app:layout_constraintBottom_toTopOf="@+id/deviceType"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/appbar_constraint" />
-
-    <Spinner
-        android:id="@+id/deviceType"
-        android:layout_width="0dp"
-        android:layout_height="37dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/darker_gray"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/makeSubtitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

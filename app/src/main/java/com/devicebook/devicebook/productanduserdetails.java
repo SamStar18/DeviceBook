@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.Locale;
 
 
-public class productanduserdetails extends AppCompatActivity {
+public class productanduserdetails extends phone_avtivity {
 
     private Spinner countrySpinner;
     private EditText name;
@@ -24,17 +24,21 @@ public class productanduserdetails extends AppCompatActivity {
     private EditText email;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productanduserdetails);
 
-        countrySpinner = (Spinner) findViewById(R.id.countrySpinner);
-        name = (EditText) findViewById(R.id.name);
-        mobileHint = (EditText) findViewById(R.id.mobileHint);
-        address1 = (EditText)findViewById(R.id.address1);
-        city = (EditText) findViewById(R.id.city);
-        email = (EditText) findViewById(R.id.email);
+
+
+
+        countrySpinner = findViewById(R.id.countrySpinner);
+        name = findViewById(R.id.name);
+        mobileHint = findViewById(R.id.mobileHint);
+        address1 = findViewById(R.id.address1);
+        city = findViewById(R.id.city);
+        email = findViewById(R.id.email);
 
         Locale[] myLocation = Locale.getAvailableLocales();
 
@@ -103,7 +107,40 @@ public class productanduserdetails extends AppCompatActivity {
             return;
         }
         else{
-            startActivity(new Intent(productanduserdetails.this,displayActivity.class));
+
+            Intent bookingdetailsintent = getIntent();
+
+            String csdeviceType = bookingdetailsintent.getStringExtra("csdeviceType");
+            String csmodel = bookingdetailsintent.getStringExtra("csmodel");
+            String csbrand = bookingdetailsintent.getStringExtra("csbrand");
+            String csfault = bookingdetailsintent.getStringExtra("csfault");
+            String cscolor = bookingdetailsintent.getStringExtra(" cscolor");
+            String cscollection = bookingdetailsintent.getStringExtra("cscollection");
+
+
+
+
+            Intent csdetailsintent = new Intent(getApplicationContext(),displayActivity.class);
+
+            csdetailsintent.putExtra("csname",name.getText().toString());
+            csdetailsintent.putExtra("csemail",email.getText().toString());
+            csdetailsintent.putExtra("csaddress",address1.getText().toString());
+            csdetailsintent.putExtra("csmobile",mobileHint.getText().toString());
+            csdetailsintent.putExtra("cscity",city.getText().toString());
+            csdetailsintent.putExtra("cscountry",countrySpinner.getSelectedItem().toString());
+
+            csdetailsintent.putExtra("csdeviceintent2",csdeviceType);
+            csdetailsintent.putExtra("csmodelintent2",csmodel);
+            csdetailsintent.putExtra("csbrandintent2",csbrand);
+            csdetailsintent.putExtra("csfaultintent2",csfault);
+            csdetailsintent.putExtra("cscolorintent2",cscolor);
+            csdetailsintent.putExtra("cscollectionintent2",cscollection);
+
+
+
+
+            startActivity(csdetailsintent);
+
         }
     }
 }
