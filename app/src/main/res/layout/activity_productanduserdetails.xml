@@ -10,8 +10,7 @@
         android:id="@+id/appbar_constraint"
 
         layout="@layout/drawerlayout"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="0dp" />
+         />
 
     <TextView
         android:id="@+id/nameSubtitle"

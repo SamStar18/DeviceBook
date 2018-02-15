@@ -20,69 +20,96 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/csName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="28dp"
+        android:hint=""
+        android:inputType="textEmailSubject"
         android:text="@string/csNameSummary"
         android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerDetailsSummary" />
 
-    <TextView
+
+    <EditText
         android:id="@+id/csPhoneNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:hint=""
+        android:inputType="number|phone"
         android:text="@string/csNumber"
         android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/csPhoneNumber2"
         app:layout_constraintTop_toBottomOf="@+id/csName" />
 
-    <TextView
+    <EditText
         android:id="@+id/csEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="8dp"
+        android:hint=""
+        android:inputType="textEmailSubject"
         android:text="@string/csEmail"
         android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintStart_toEndOf="@+id/csEmail2"
         app:layout_constraintTop_toBottomOf="@+id/csPhoneNumber" />
 
-    <TextView
+    <EditText
         android:id="@+id/csAddress"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="28dp"
+        android:hint=""
+        android:inputType="textEmailSubject"
         android:text="@string/csAddress"
+        android:textAlignment="inherit"
         android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csEmail" />
 
-    <TextView
+    <EditText
         android:id="@+id/csCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:hint=""
+        android:inputType="textEmailSubject"
         android:text="@string/csCity"
         android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.969"
+        app:layout_constraintStart_toEndOf="@+id/csCity2"
         app:layout_constraintTop_toBottomOf="@+id/csAddress" />
 
-    <TextView
+    <EditText
         android:id="@+id/csCountry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="12dp"
+        android:hint=""
+        android:inputType="textEmailSubject"
         android:text="@string/csCountry"
         android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csCity" />
 
@@ -91,7 +118,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
         android:text="@string/csName2"
         app:layout_constraintEnd_toStartOf="@+id/csName"
@@ -103,12 +130,9 @@
         android:id="@+id/csPhoneNumber2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
         android:text="@string/csPhoneNumber2"
-        app:layout_constraintEnd_toStartOf="@+id/csPhoneNumber"
-        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csName2" />
 
@@ -116,12 +140,9 @@
         android:id="@+id/csEmail2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
         android:text="@string/csEmail2"
-        app:layout_constraintEnd_toStartOf="@+id/csEmail"
-        app:layout_constraintHorizontal_bias="0.031"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csPhoneNumber2" />
 
@@ -129,12 +150,9 @@
         android:id="@+id/csCity2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:text="@string/csCity2"
-        app:layout_constraintEnd_toStartOf="@+id/csCity"
-        app:layout_constraintHorizontal_bias="0.029"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csAddress2" />
 
@@ -149,35 +167,36 @@
         android:text="@string/csCountry2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/csCountry"
-        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintHorizontal_bias="0.018"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csCity2"
-        app:layout_constraintVertical_bias="0.005" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/csAddress2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="36dp"
         android:text="@string/csAddress2"
         app:layout_constraintEnd_toStartOf="@+id/csAddress"
-        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintHorizontal_bias="0.021"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csEmail2" />
 
 
     <Button
-        android:id="@+id/csEditButton"
+        android:id="@+id/csEditButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
+        android:onClick="edit1buttonpressed"
         android:text="@string/csEditButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.983"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csCountry" />
 
@@ -187,81 +206,99 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:text="@string/csBookingSummary"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/csEditButton" />
+        app:layout_constraintTop_toBottomOf="@+id/csEditButton1" />
 
 
-    <TextView
+    <EditText
         android:id="@+id/csdeviceType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="40dp"
         android:text="@string/csdeviceType"
+        android:inputType="textEmailSubject"
+        android:hint=""
+        android:textSize="14sp"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csBookingSummary" />
 
-    <TextView
+    <EditText
         android:id="@+id/csBrand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="12dp"
+        android:hint=""
+        android:inputType="textEmailSubject"
         android:text="@string/csBrand"
         android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csdeviceType" />
 
-    <TextView
+    <EditText
         android:id="@+id/csModel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:hint=""
+        android:inputType="textEmailSubject"
         android:text="@string/csModel"
         android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csBrand" />
 
-    <TextView
+    <EditText
         android:id="@+id/csFault"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/csfault"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:hint=""
+        android:inputType="textEmailSubject"
+        android:text="@string/csFault"
         android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/csFault2"
         app:layout_constraintTop_toBottomOf="@+id/csModel" />
 
-    <TextView
-        android:id="@+id/csColor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/csColor"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/csFault" />
-
-    <TextView
-        android:id="@+id/csRecieveMethod"
+    <EditText
+        android:id="@+id/deviceColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/csCountry"
+        android:layout_marginTop="16dp"
+        android:hint=""
+        android:inputType="textEmailSubject"
+        android:text="@string/deviceColor"
         android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/csColor"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintTop_toBottomOf="@+id/csFault" />
+
+    <EditText
+        android:id="@+id/deviceRecieveMethod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:hint=""
+        android:inputType="textEmailSubject"
+        android:text="@string/deviceRecieveMethod"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deviceColor" />
 
     <TextView
         android:id="@+id/csDeviceType2"
@@ -269,9 +306,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="48dp"
         android:text="@string/csDeviceType2"
-        app:layout_constraintEnd_toStartOf="@+id/csName"
+        app:layout_constraintEnd_toStartOf="@+id/csdeviceType"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csBookingSummary" />
@@ -281,11 +318,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:text="@string/csBrand2"
-        app:layout_constraintEnd_toStartOf="@+id/csDeviceType2"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintEnd_toStartOf="@+id/csBrand"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csDeviceType2" />
 
@@ -294,11 +331,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
         android:text="@string/csModel2"
-        app:layout_constraintEnd_toStartOf="@+id/csEmail"
-        app:layout_constraintHorizontal_bias="0.031"
+        app:layout_constraintEnd_toStartOf="@+id/csModel"
+        app:layout_constraintHorizontal_bias="0.002"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csBrand2" />
 
@@ -306,14 +343,12 @@
         android:id="@+id/csFault2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:text="@string/csfault2"
-        app:layout_constraintEnd_toStartOf="@+id/csCity"
-        app:layout_constraintHorizontal_bias="0.029"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csModel2" />
+
 
     <TextView
         android:id="@+id/csColor2"
@@ -321,29 +356,29 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:text="@string/csColor2"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/csCountry"
-        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintEnd_toStartOf="@+id/deviceColor"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csFault2"
-        app:layout_constraintVertical_bias="0.005" />
+        app:layout_constraintVertical_bias="0.033" />
 
     <TextView
         android:id="@+id/csRecieveMethod2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
-        android:text="@string/csRecieveMethod2"
-        app:layout_constraintEnd_toStartOf="@+id/csAddress"
-        app:layout_constraintHorizontal_bias="0.039"
+        android:text="@string/csRecieveMethod3"
+        app:layout_constraintEnd_toStartOf="@+id/deviceRecieveMethod"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csColor2" />
-
 
     <Button
         android:id="@+id/csEditButton2"
@@ -351,10 +386,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
+        android:onClick="edit2buttonpressed"
         android:text="@string/csEditButton2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.983"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csRecieveMethod2" />
 
@@ -362,12 +398,19 @@
         android:id="@+id/csConfirmButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:background="@drawable/buttonshape2"
+        android:padding="10dp"
         android:text="@string/csContinueButton"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="#ffffff"
+
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/csEditButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/csEditButton2"
+        app:layout_constraintVertical_bias="0.6" />
 
 
 

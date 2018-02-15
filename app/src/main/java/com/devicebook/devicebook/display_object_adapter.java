@@ -1,5 +1,6 @@
 package com.devicebook.devicebook;
 
+import android.widget.Button;
 import android.widget.TextView;
 
 /**
@@ -14,28 +15,36 @@ public class display_object_adapter {
     private String city;
     private String country;
 
+    private Button editbutton1;
+
     private String csdeviceType;
     private String csdeviceModel;
     private String csdeviceBrand;
     private String csfaultspinner;
     private String cscolorspinner;
     private String csCollectionOptions;
+    private Button editbutton2;
+    private Button csConfirmButton;
 
 
-    public display_object_adapter(String name, String phoneNumber, String email, String addressline1, String city, String country, String csdeviceType, String csdeviceModel, String csdeviceBrand, String csfaultspinner, String cscolorspinner, String csCollectionOptions) {
+    public display_object_adapter(String name, String phoneNumber, String email, String addressline1, String city, String country, Button editbutton1, String csdeviceType, String csdeviceModel, String csdeviceBrand, String csfaultspinner, String cscolorspinner, String csCollectionOptions, Button editbutton2, Button csConfirmButton) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.addressline1 = addressline1;
         this.city = city;
         this.country = country;
+        this.editbutton1 = editbutton1;
         this.csdeviceType = csdeviceType;
         this.csdeviceModel = csdeviceModel;
         this.csdeviceBrand = csdeviceBrand;
         this.csfaultspinner = csfaultspinner;
         this.cscolorspinner = cscolorspinner;
         this.csCollectionOptions = csCollectionOptions;
+        this.editbutton2 = editbutton2;
+        this.csConfirmButton = csConfirmButton;
     }
+
 
     public String getName() {
         return name;
@@ -83,6 +92,14 @@ public class display_object_adapter {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public Button getEditbutton1() {
+        return editbutton1;
+    }
+
+    public void setEditbutton1(Button editbutton1) {
+        this.editbutton1 = editbutton1;
     }
 
     public String getCsdeviceType() {
@@ -133,4 +150,19 @@ public class display_object_adapter {
         this.csCollectionOptions = csCollectionOptions;
     }
 
+    public Button getEditbutton2() {
+        return editbutton2;
+    }
+
+    public void setEditbutton2(Button editbutton2) {
+        this.editbutton2 = editbutton2;
+    }
+
+    public Button getCsConfirmButton() {
+        return csConfirmButton;
+    }
+
+    public void setCsConfirmButton(Button csConfirmButton) {
+        this.csConfirmButton = csConfirmButton;
+    }
 }

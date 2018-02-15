@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.Locale;
 
 
-public class productanduserdetails extends phone_avtivity {
+public class productanduserdetails extends AppCompatActivity {
 
     private Spinner countrySpinner;
     private EditText name;
@@ -114,7 +114,7 @@ public class productanduserdetails extends phone_avtivity {
             String csmodel = bookingdetailsintent.getStringExtra("csmodel");
             String csbrand = bookingdetailsintent.getStringExtra("csbrand");
             String csfault = bookingdetailsintent.getStringExtra("csfault");
-            String cscolor = bookingdetailsintent.getStringExtra(" cscolor");
+            String cscolor = bookingdetailsintent.getStringExtra("cscolor");
             String cscollection = bookingdetailsintent.getStringExtra("cscollection");
 
 

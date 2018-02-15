@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -19,23 +20,28 @@ public class phone_avtivity extends AppCompatActivity {
     private Spinner deviceBrand;
     private Spinner deviceModel;
     private Spinner faultSpinner;
-    private Spinner colorSpinner;
-    private RadioGroup collectionOptions;
+    private Spinner mycolorSpinner;
+    private RadioGroup mycollectionOptions;
     private Button continueButton;
+    String collectionradio;
+    String colorchoice;
 
     // this is used to call the arrays in the string list
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_avtivity);
-
+        deviceType = findViewById(R.id.deviceType);
         faultSpinner = findViewById(R.id.faultSpinner);
         deviceBrand = findViewById(R.id.deviceBrand);
         deviceModel = findViewById(R.id.deviceModel);
-        colorSpinner = findViewById(R.id.colorSpinner);
-        collectionOptions = findViewById(R.id.CollectionOptions);
+        mycolorSpinner = findViewById(R.id.mycolorSpinner);
+        mycollectionOptions = findViewById(R.id.mycollectionOptions);
         continueButton = findViewById(R.id.continueButton);
-        deviceType = findViewById(R.id.deviceType);
+
+
+
+
 
         ArrayList<String> deviceArray = new ArrayList<>();
         Collections.addAll(deviceArray,"","Phone","Tablet");
@@ -149,7 +155,7 @@ public class phone_avtivity extends AppCompatActivity {
 
         deviceType.setAdapter(deviceAdapter);
         faultSpinner.setAdapter(faultAdapter);
-        colorSpinner.setAdapter(colorAdapter);
+        mycolorSpinner.setAdapter(colorAdapter);
 
         deviceType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -232,13 +238,13 @@ public class phone_avtivity extends AppCompatActivity {
 
 
 
-        Toast  mytoast = null;
+
 
         if(faultSpinner.getSelectedItem().toString().contentEquals("")){
             Toast.makeText(phone_avtivity.this,"Please Select a fault " ,Toast.LENGTH_SHORT).show();
             return;
         }
-        else if(colorSpinner.getSelectedItem().toString().contentEquals("")){
+        else if(mycolorSpinner.getSelectedItem().toString().contentEquals("")){
             Toast.makeText(phone_avtivity.this,"Please Select device color " ,Toast.LENGTH_SHORT).show();
             return;
         }
@@ -254,7 +260,7 @@ public class phone_avtivity extends AppCompatActivity {
             Toast.makeText(phone_avtivity.this,"Please Select device model " ,Toast.LENGTH_SHORT).show();
             return;
         }
-        else if(collectionOptions.getCheckedRadioButtonId() == -1){
+        else if(mycollectionOptions.getCheckedRadioButtonId() == -1){
             Toast.makeText(phone_avtivity.this,"Please Select a collection option " ,Toast.LENGTH_SHORT).show();
             return;
         }
@@ -265,8 +271,9 @@ public class phone_avtivity extends AppCompatActivity {
             bookingdetailsintent.putExtra("csmodel",deviceModel.getSelectedItem().toString());
             bookingdetailsintent.putExtra("csbrand",deviceBrand.getSelectedItem().toString());
             bookingdetailsintent.putExtra("csfault",faultSpinner.getSelectedItem().toString());
-            bookingdetailsintent.putExtra("cscolor",colorSpinner.getSelectedItem().toString());
-            bookingdetailsintent.putExtra("cscollection",collectionOptions.getCheckedRadioButtonId());
+            bookingdetailsintent.putExtra("cscolor",mycolorSpinner.getSelectedItem().toString());
+            bookingdetailsintent.putExtra("cscollection",collectionradio = ((RadioButton) findViewById(mycollectionOptions.getCheckedRadioButtonId())).getText().toString());
+
 
 
 

@@ -69,17 +69,21 @@
     <string name="csdeviceType">Device Type</string>
     <string name="csBrand">Brand</string>
     <string name="csModel">Model</string>
-    <string name="csfault">Fault</string>
-    <string name="csColor">Color</string>
-    <string name="csRecieveMethod">Recieve Method</string>
+
+    <string name="csRecieveMethod3">Recieve Method</string>
+    <string name="deviceColor">Color</string>
+
     <string name="csDeviceType2">Device Type</string>
     <string name="csBrand2">Brand</string>
     <string name="csModel2">Model</string>
     <string name="csfault2">Fault</string>
     <string name="csColor2">Color</string>
-    <string name="csRecieveMethod2">Recieve Method</string>
     <string name="csEditButton2">Edit</string>
-    <string name="csContinueButton">Contunue</string>
+    <string name="csContinueButton">Continue</string>
+
+
+    <string name="deviceRecieveMethod">Recieve</string>
+    <string name="csFault">Fault</string>
 
 
     <string-array name="phoneMakes">

@@ -150,7 +150,7 @@
         app:layout_constraintVertical_bias="0.009" />
 
     <Spinner
-        android:id="@+id/colorSpinner"
+        android:id="@+id/mycolorSpinner"
         android:layout_width="0dp"
         android:layout_height="37dp"
         android:layout_marginBottom="144dp"
@@ -174,14 +174,14 @@
         android:layout_marginStart="8dp"
         android:text="@string/DeliverySubtitle"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/CollectionOptions"
+        app:layout_constraintBottom_toTopOf="@+id/mycollectionOptions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/colorSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/mycolorSpinner"
         app:layout_constraintVertical_bias="1.0" />
 
     <RadioGroup
-        android:id="@+id/CollectionOptions"
+        android:id="@+id/mycollectionOptions"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"
@@ -194,7 +194,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/colorSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/mycolorSpinner"
         app:layout_constraintVertical_bias="0.413">
 
         <RadioButton
@@ -240,7 +240,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/CollectionOptions"
+        app:layout_constraintTop_toTopOf="@+id/mycollectionOptions"
         app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
