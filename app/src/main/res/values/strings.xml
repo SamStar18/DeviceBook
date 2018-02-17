@@ -46,14 +46,14 @@
     <string name="csDetails">Customer Details</string>
     <string name="csBookingDetails">Booking Details</string>
     <string name="devicetTypeSummary">Device Type</string>
-    <string name="csDeviceType">Tablet</string>
+    <string name="csDeviceType">Device</string>
     <string name="csNameSummary">Name</string>
-    <string name="csName">Sam</string>
+    <string name="csName">Name   </string>
 
-    <string name="csNumber">phoneNumber</string>
-    <string name="csEmail">Email</string>
+    <string name="csNumber">Number </string>
+    <string name="csEmail">Email  </string>
 
-    <string name="csCity">City</string>
+    <string name="csCity">City   </string>
     <string name="csCountry">Country</string>
     <string name="csName2">Name:</string>
     <string name="csPhoneNumber2">Number:</string>
@@ -66,14 +66,14 @@
     <string name="customerDetailsSummary">Customer Details</string>
     <string name="csEditButton">Edit</string>
     <string name="csBookingSummary">Booking Details</string>
-    <string name="csdeviceType">Device Type</string>
-    <string name="csBrand">Brand</string>
-    <string name="csModel">Model</string>
+    <string name="csdeviceType">Device</string>
+    <string name="csBrand">Brand </string>
+    <string name="csModel">Model </string>
 
-    <string name="csRecieveMethod3">Recieve Method</string>
+    <string name="csRecieveMethod3">Recieve</string>
     <string name="deviceColor">Color</string>
 
-    <string name="csDeviceType2">Device Type</string>
+    <string name="csDeviceType2">Device</string>
     <string name="csBrand2">Brand</string>
     <string name="csModel2">Model</string>
     <string name="csfault2">Fault</string>

@@ -1,10 +1,18 @@
 package com.devicebook.devicebook;
 
+import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
+import android.text.method.KeyListener;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +20,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import static android.content.Context.CLIPBOARD_SERVICE;
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by Sam on 07/02/2018.
@@ -22,8 +33,9 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
    private Context cscontext;
     int csresource;
     LayoutInflater inflater;
+    private KeyListener mykeylistner;
 
-
+    private SharedPreferences SaveTest;
 
     public custom_csdetail_adapter(Context context, int resource, ArrayList<display_object_adapter> objects) {
         super(context, resource, objects);
@@ -44,7 +56,7 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
          Button editbutton1 = getItem(position).getEditbutton1();
 
      String csdeviceType = getItem(position).getCsdeviceType();
-     String csdeviceModel= getItem(position).getCsdeviceModel();
+     final String csdeviceModel= getItem(position).getCsdeviceModel();
      String csdeviceBrand  = getItem(position).getCsdeviceBrand();
      String csfaultspinner = getItem(position).getCsfaultspinner();
      String cscolorspinner = getItem(position).getCscolorspinner();
@@ -55,7 +67,7 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
 
         
         inflater = LayoutInflater.from(cscontext);
-        convertView = inflater.inflate(csresource,parent,false);
+         convertView = inflater.inflate(csresource,parent,false);
 
 
 
@@ -86,7 +98,7 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
         tvcity.setText(city);
         tvcountry.setText(country);
 
-       
+
 
         tvdevicetype.setText(csdeviceType);
         tvmodel.setText(csdeviceModel);
@@ -94,42 +106,240 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
         tvfault.setText(csfaultspinner);
         tvcolor.setText(cscolorspinner);
         tvcollectionOptions.setText(csCollectionOptions);
+        btn1.setText("Edit List");
+        btn2.setText("Edit List");
+        csConfirmbtn.setText("Save and Continue");
 
 
-        tvname.setFocusable(false);
-        tvnumber.setFocusable(false);
-        tvemail.setFocusable(false);
-        tvaddress.setFocusable(false);
-        tvcity.setFocusable(false);
-        tvcountry.setFocusable(false);
-        tvdevicetype.setFocusable(false);
-        tvmodel.setFocusable(false);
-        tvbrand.setFocusable(false);
-        tvfault.setFocusable(false);
+        tvname.setSelection(tvname.getText().length());
+        tvemail.setSelection(tvemail.getText().length());
+        tvnumber.setSelection(tvnumber.getText().length());
+        tvcity.setSelection(tvcity.getText().length());
+        tvaddress.setSelection(tvaddress.getText().length());
+        tvcountry.setSelection(tvcountry.getText().length());
 
-        tvcolor.setFocusable(false);
-        tvcollectionOptions.setFocusable(false);
+        tvdevicetype.setSelection(tvdevicetype.getText().length());
+        tvmodel.setSelection(tvmodel.getText().length());
+        tvbrand.setSelection(tvbrand.getText().length());
+        tvcolor.setSelection( tvcolor.getText().length());
+        tvfault.setSelection(tvfault.getText().length());
+        tvcollectionOptions.setSelection(tvcollectionOptions.getText().length());
 
+
+
+/////////////////////////////////////btn to edit what is in keyboard and bringing up softkeyboard///////////////////////////////////////////////////////////////
 btn1.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-        tvname.setText("Sam hey");
+
+        tvname.setFocusableInTouchMode(true);
+        tvname.requestFocus();
+        InputMethodManager nameInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        nameInput.showSoftInput(tvname, 0);
+
+
+
+        InputMethodManager numberInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        numberInput.showSoftInput(tvnumber, 0);
+        tvnumber.setFocusableInTouchMode(true);
+
+
+        InputMethodManager emailInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        emailInput.showSoftInput(tvemail, 0);
+        tvemail.setFocusableInTouchMode(true);
+
+
+
+
+        InputMethodManager addressInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        addressInput.showSoftInput(tvaddress, 0);
+        tvaddress.setFocusableInTouchMode(true);
+
+
+        InputMethodManager cityInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        cityInput.showSoftInput(tvcity, 0);
+        tvcity.setFocusableInTouchMode(true);
+
+
+        InputMethodManager countryInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        countryInput.showSoftInput(tvcountry, 0);
+        tvcountry.setFocusableInTouchMode(true);
+
+
     }
 });
+///////////////////////////////  to hide soft keyboard. /////////////////////////////////////////////////////
+        tvcountry.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if(actionId==EditorInfo.IME_ACTION_DONE){
+                    tvcountry.clearFocus();
+                    tvcountry.setFocusableInTouchMode(false);
+                    tvname.setFocusableInTouchMode(false);
+                    tvnumber.setFocusableInTouchMode(false);
+                    tvemail.setFocusableInTouchMode(false);
+                    tvaddress.setFocusableInTouchMode(false);
+                    tvcity.setFocusableInTouchMode(false);
+                    InputMethodManager myinput = (InputMethodManager)v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    myinput.hideSoftInputFromWindow(tvcountry.getWindowToken(), 0);
+
+                }
+                return false;
+            }
+        });
+
 
 btn2.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
 
+
+
+        tvdevicetype.setFocusableInTouchMode(true);
+        tvdevicetype.requestFocus();
+        InputMethodManager devicetypeInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        devicetypeInput.showSoftInput(tvdevicetype, 0);
+
+
+        InputMethodManager modelInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        modelInput.showSoftInput(tvmodel, 0);
+        tvmodel.setFocusableInTouchMode(true);
+
+
+        InputMethodManager brandInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        brandInput.showSoftInput(tvbrand, 0);
+        tvbrand.setFocusableInTouchMode(true);
+
+
+        InputMethodManager faultInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        faultInput.showSoftInput(tvfault, 0);
+        tvfault.setFocusableInTouchMode(true);
+
+
+        InputMethodManager colorInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        colorInput.showSoftInput(tvcolor, 0);
+        tvcolor.setFocusableInTouchMode(true);
+
+
+        InputMethodManager collectInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        collectInput.showSoftInput(tvcollectionOptions, 0);
+        tvcollectionOptions.setFocusableInTouchMode(true);
+
+
     }
 });
 
-csConfirmbtn.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        
-    }
-});
+
+
+        tvcollectionOptions.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if(actionId==EditorInfo.IME_ACTION_DONE){
+                    tvcollectionOptions.clearFocus();
+                    tvcollectionOptions.setFocusableInTouchMode(false);
+                    tvdevicetype.setFocusableInTouchMode(false);
+                    tvmodel.setFocusableInTouchMode(false);
+                    tvbrand.setFocusableInTouchMode(false);
+                    tvcolor.setFocusableInTouchMode(false);
+                    tvfault.setFocusableInTouchMode(false);
+                    InputMethodManager myinput = (InputMethodManager)v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    myinput.hideSoftInputFromWindow(tvcollectionOptions.getWindowToken(), 0);
+
+                }
+                return false;
+            }
+        });
+
+
+        csConfirmbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+                String lettersValid = "[a-zA-Z ]+";
+                if(tvname.getText().toString().contentEquals("")){
+                    Toast.makeText(view.getContext(),"Name is Empty",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+                else if(tvnumber.getText().toString().contentEquals("")){
+                    Toast.makeText(view.getContext(),"Number is Empty",Toast.LENGTH_SHORT).show();
+                     return;
+                }
+
+                else if(tvemail.getText().toString().contentEquals("")){
+                    Toast.makeText(view.getContext(),"Email is Empty",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                else if(!tvemail.getText().toString().matches(emailPattern)){
+                    Toast.makeText(view.getContext(),"Email is Invalid",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+                else if(tvaddress.getText().toString().contentEquals("")){
+                    Toast.makeText(view.getContext(),"Address is empty",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+                else if(tvcity.getText().toString().contentEquals("")){
+                    Toast.makeText(view.getContext(),"City is Empty",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                else if(tvcountry.getText().toString().contentEquals("")){
+                    Toast.makeText(view.getContext(),"Country is Empty",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                else if(tvdevicetype.getText().toString().contentEquals("")){
+                    Toast.makeText(view.getContext(),"Device type is Empty",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                else if(tvmodel.getText().toString().contentEquals("")){
+                    Toast.makeText(view.getContext(),"Model is Empty",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                else if(tvbrand.getText().toString().contentEquals("")){
+                    Toast.makeText(view.getContext(),"Brand is Empty",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                else if(tvcolor.getText().toString().contentEquals("")){
+                    Toast.makeText(view.getContext(),"Color is Empty",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                else if(tvfault.getText().toString().contentEquals("")){
+                    Toast.makeText(view.getContext(),"Fault is Empty",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                else if(tvcollectionOptions.getText().toString().contentEquals("")){
+                    Toast.makeText(view.getContext(),"No Collection option",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+
+                else{
+                    
+
+                    //Intent testIntent = new Intent(view.getContext().getApplicationContext(),phone_avtivity.class);
+                    //view.getContext().startActivity(new Intent(testIntent));
+
+
+                }
+
+}
+
+
+        });
 
         return convertView;
 

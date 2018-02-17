@@ -39,7 +39,11 @@
             android:theme="@style/AppTheme.drawerlayout.noActionBar"></activity>
         <activity android:name=".displayActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.drawerlayout.noActionBar"></activity>
+            android:theme="@style/AppTheme.drawerlayout.noActionBar"
+            android:windowSoftInputMode="adjustPan">
+
+
+        </activity>
     </application>
 
 </manifest>
