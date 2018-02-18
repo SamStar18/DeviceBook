@@ -28,7 +28,8 @@ public class displayActivity extends AppCompatActivity {
         Button csConfirmButton = findViewById(R.id.csConfirmButton);
         Button editbutton1 = findViewById(R.id.csEditButton1);
         Button editbutton2 = findViewById(R.id.csEditButton2);
-
+        Button csDeleteButton1 = findViewById(R.id.csDeleteButton1);
+        Button csDeleteButton2 = findViewById(R.id.csDeleteButton1);
     Intent csdetailsintent = getIntent();
 
 
@@ -55,7 +56,7 @@ public class displayActivity extends AppCompatActivity {
 
 
 
-        display_object_adapter csObject = new display_object_adapter(csname,csmobile,csemail,csaddress,cscity,cscountry,editbutton1,csdeviceType,csmodel,csbrand,csfault,cscolor,cscollection,editbutton2,csConfirmButton);
+        display_object_adapter csObject = new display_object_adapter(csname,csmobile,csemail,csaddress,cscity,cscountry,editbutton1,csDeleteButton1,csdeviceType,csmodel,csbrand,csfault,cscolor,cscollection,editbutton2,csDeleteButton2,csConfirmButton);
 
 
         ArrayList<display_object_adapter> customerArray = new ArrayList<>();

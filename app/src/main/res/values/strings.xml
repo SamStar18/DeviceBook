@@ -84,6 +84,8 @@
 
     <string name="deviceRecieveMethod">Recieve</string>
     <string name="csFault">Fault</string>
+    <string name="csDeletebtn1">Delete</string>
+    <string name="csDeleteBtn2">Delete</string>
 
 
     <string-array name="phoneMakes">

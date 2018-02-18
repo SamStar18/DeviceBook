@@ -16,7 +16,7 @@ public class display_object_adapter {
     private String country;
 
     private Button editbutton1;
-
+    private Button csDeleteButton1;
     private String csdeviceType;
     private String csdeviceModel;
     private String csdeviceBrand;
@@ -24,10 +24,11 @@ public class display_object_adapter {
     private String cscolorspinner;
     private String csCollectionOptions;
     private Button editbutton2;
+    private Button csDeleteButton2;
     private Button csConfirmButton;
 
 
-    public display_object_adapter(String name, String phoneNumber, String email, String addressline1, String city, String country, Button editbutton1, String csdeviceType, String csdeviceModel, String csdeviceBrand, String csfaultspinner, String cscolorspinner, String csCollectionOptions, Button editbutton2, Button csConfirmButton) {
+    public display_object_adapter(String name, String phoneNumber, String email, String addressline1, String city, String country, Button editbutton1,Button csDeleteButton1, String csdeviceType, String csdeviceModel, String csdeviceBrand, String csfaultspinner, String cscolorspinner, String csCollectionOptions, Button editbutton2,Button csDeleteButton2,Button csConfirmButton) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -35,6 +36,7 @@ public class display_object_adapter {
         this.city = city;
         this.country = country;
         this.editbutton1 = editbutton1;
+        this.csDeleteButton1 = csDeleteButton1;
         this.csdeviceType = csdeviceType;
         this.csdeviceModel = csdeviceModel;
         this.csdeviceBrand = csdeviceBrand;
@@ -42,6 +44,7 @@ public class display_object_adapter {
         this.cscolorspinner = cscolorspinner;
         this.csCollectionOptions = csCollectionOptions;
         this.editbutton2 = editbutton2;
+        this.csDeleteButton2 = csDeleteButton2;
         this.csConfirmButton = csConfirmButton;
     }
 
@@ -164,5 +167,21 @@ public class display_object_adapter {
 
     public void setCsConfirmButton(Button csConfirmButton) {
         this.csConfirmButton = csConfirmButton;
+    }
+
+    public Button getCsDeleteButton1() {
+        return csDeleteButton1;
+    }
+
+    public void setCsDeleteButton1(Button csDeleteButton1) {
+        this.csDeleteButton1 = csDeleteButton1;
+    }
+
+    public Button getCsDeleteButton2() {
+        return csDeleteButton2;
+    }
+
+    public void setCsDeleteButton2(Button csDeleteButton2) {
+        this.csDeleteButton2 = csDeleteButton2;
     }
 }

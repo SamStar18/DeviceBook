@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import static android.content.Context.CLIPBOARD_SERVICE;
 import static android.content.Context.MODE_PRIVATE;
@@ -54,7 +55,7 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
          String country = getItem(position).getCountry();
 
          Button editbutton1 = getItem(position).getEditbutton1();
-
+        Button csDeleteButton1 = getItem(position).getCsDeleteButton1();
      String csdeviceType = getItem(position).getCsdeviceType();
      final String csdeviceModel= getItem(position).getCsdeviceModel();
      String csdeviceBrand  = getItem(position).getCsdeviceBrand();
@@ -63,6 +64,7 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
      String csCollectionOptions = getItem(position).getCsCollectionOptions();
 
      Button edibutton2 = getItem(position).getEditbutton2();
+        Button csDeleteButton2 = getItem(position).getCsDeleteButton2();
      Button csConfirmButton = getItem(position).getCsConfirmButton();
 
         
@@ -78,7 +80,7 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
         final  EditText tvcity = convertView.findViewById(R.id.csCity);
         final  EditText  tvcountry = convertView.findViewById(R.id.csCountry);
         final Button btn1 = convertView.findViewById(R.id.csEditButton1);
-
+        final Button csDeletebtn1 = convertView.findViewById(R.id.csDeleteButton1);
 
 
         final EditText tvdevicetype = convertView.findViewById(R.id.csdeviceType);
@@ -88,6 +90,7 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
         final EditText tvcolor = convertView.findViewById(R.id.deviceColor);
         final EditText tvcollectionOptions = convertView.findViewById(R.id.deviceRecieveMethod);
         final Button btn2 = convertView.findViewById(R.id.csEditButton2);
+        final Button csDeletebtn2 = convertView.findViewById(R.id.csDeleteButton2);
         final Button csConfirmbtn = convertView.findViewById(R.id.csConfirmButton);
 
 
@@ -245,6 +248,7 @@ btn2.setOnClickListener(new View.OnClickListener() {
                     InputMethodManager myinput = (InputMethodManager)v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                     myinput.hideSoftInputFromWindow(tvcollectionOptions.getWindowToken(), 0);
 
+
                 }
                 return false;
             }
@@ -328,7 +332,7 @@ btn2.setOnClickListener(new View.OnClickListener() {
 
 
                 else{
-                    
+
 
                     //Intent testIntent = new Intent(view.getContext().getApplicationContext(),phone_avtivity.class);
                     //view.getContext().startActivity(new Intent(testIntent));
@@ -339,6 +343,31 @@ btn2.setOnClickListener(new View.OnClickListener() {
 }
 
 
+        });
+
+        //////////////////////////////Delete Section /////////////////////////////////////////////////////
+
+        csDeletebtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                ArrayList<EditText> entry1 = new ArrayList<>();
+
+                Collections.addAll(entry1,tvname,tvnumber,tvemail,tvaddress,tvcity,tvcountry);
+
+                entry1.removeAll(entry1);
+
+
+            }
+        });
+
+        csDeletebtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+            }
         });
 
         return convertView;
