@@ -36,14 +36,17 @@
         <activity
             android:name=".productanduserdetails"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.drawerlayout.noActionBar"></activity>
-        <activity android:name=".displayActivity"
+            android:theme="@style/AppTheme.drawerlayout.noActionBar" />
+        <activity
+            android:name=".displayActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.drawerlayout.noActionBar"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustPan"/>
 
-
-        </activity>
+        <activity android:name=".Display_Order_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.drawerlayout.noActionBar"
+            android:windowSoftInputMode="adjustPan"/>
     </application>
 
 </manifest>

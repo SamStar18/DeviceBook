@@ -29,7 +29,7 @@ String listcaption;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
 
-        gridView = (GridView) findViewById(R.id.productView);
+        gridView = findViewById(R.id.productView);
 
 
         final Custom_Grid_Adapter adapter = new Custom_Grid_Adapter(Product.this, deviceImages, phonecaptionlists);
@@ -40,13 +40,16 @@ String listcaption;
 
 
         String deviceselection = adapterView.getItemAtPosition(0).toString();
-
+        String orderDisplay = adapterView.getItemAtPosition(2).toString();
 
 
                 if(phonecaptionlists[i]  == deviceselection){
                     startActivity(new Intent(Product.this,phone_avtivity.class));
                 }
 
+                if(phonecaptionlists[i] == orderDisplay){
+                    startActivity(new Intent (Product.this,Display_Order_Activity.class));
+                }
 
 
             }

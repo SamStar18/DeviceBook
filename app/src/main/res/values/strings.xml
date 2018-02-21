@@ -86,6 +86,23 @@
     <string name="csFault">Fault</string>
     <string name="csDeletebtn1">Delete</string>
     <string name="csDeleteBtn2">Delete</string>
+    <string name="orderIntro">Your device booking details are listed below:</string>
+    <string name="personalIntro">Your peronal details are</string>
+    <string name="introBooking">Thank you for booking with DeviceBook</string>
+    <string name="customerName">Name</string>
+    <string name="customerNumber">Number</string>
+    <string name="customerEmail">Email</string>
+    <string name="customerAddress">Address 1</string>
+    <string name="customerCity">city</string>
+    <string name="customerCountry">Country</string>
+    <string name="customerDeviceType">Devuce Type</string>
+    <string name="customerBrandType">Brand</string>
+    <string name="customerModelType">ModelType</string>
+    <string name="customerFaultType">Fault</string>
+    <string name="CustomerColorType">Color</string>
+    <string name="CustomerRecieveType">Recieve</string>
+    <string name="ChangeText">If you change your mind you can delete your order using button below</string>
+    <string name="DeleteOrder">Delete Order</string>
 
 
     <string-array name="phoneMakes">

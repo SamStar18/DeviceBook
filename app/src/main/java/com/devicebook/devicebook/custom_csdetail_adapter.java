@@ -34,9 +34,6 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
    private Context cscontext;
     int csresource;
     LayoutInflater inflater;
-    private KeyListener mykeylistner;
-
-    private SharedPreferences SaveTest;
 
     public custom_csdetail_adapter(Context context, int resource, ArrayList<display_object_adapter> objects) {
         super(context, resource, objects);
