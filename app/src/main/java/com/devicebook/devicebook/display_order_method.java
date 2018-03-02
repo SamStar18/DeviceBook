@@ -1,45 +1,72 @@
 package com.devicebook.devicebook;
 
-import android.widget.Button;
+import java.util.ArrayList;
 
 /**
  * Created by Sam on 20/02/2018.
  */
 
-public class display_order_method {
+public class display_order_method extends ArrayList<display_order_method> {
 
+    private String myCustomerId;
     private String myCustomerName;
     private String myCustomerNumber;
     private String myCustomerEmail;
     private String myCustomerAddress;
     private String myCustomerCity;
     private String myCustomerCountry;
+    private String mycustomerDevice;
+    private String mycustomerBrand;
+    private String mycustomerModel;
+    private String mycustomerFault;
+    private String mycustomerColor;
+    private String mycustomerRecieve;
 
-    private String mycustomerDeviceType;
-    private String mycustomerBrandType;
-    private String mycustomerModelType;
-    private String mycustomerFaultType;
-    private String mycustomerColorType;
-    private String mycustomerRecieveType;
-    private Button deleteOrder;
+    public display_order_method() {
 
-    public display_order_method(String myCustomerName, String myCustomerNumber, String myCustomerEmail, String myCustomerAddress, String myCustomerCity, String myCustomerCountry, String mycustomerDeviceType, String mycustomerBrandType, String mycustomerModelType, String mycustomerFaultType, String mycustomerColorType, String mycustomerRecieveType, Button deleteOrder) {
+    }
+
+
+    public display_order_method(String mycustomerId, String myCustomerName, String myCustomerNumber, String myCustomerEmail, String myCustomerAddress, String myCustomerCity, String myCustomerCountry, String mycustomerDevice, String mycustomerBrand, String mycustomerModel, String mycustomerFault, String mycustomerColor, String mycustomerRecieve) {
+        myCustomerId = mycustomerId;
         this.myCustomerName = myCustomerName;
         this.myCustomerNumber = myCustomerNumber;
         this.myCustomerEmail = myCustomerEmail;
         this.myCustomerAddress = myCustomerAddress;
         this.myCustomerCity = myCustomerCity;
         this.myCustomerCountry = myCustomerCountry;
-        this.mycustomerDeviceType = mycustomerDeviceType;
-        this.mycustomerBrandType = mycustomerBrandType;
-        this.mycustomerModelType = mycustomerModelType;
-        this.mycustomerFaultType = mycustomerFaultType;
-        this.mycustomerColorType = mycustomerColorType;
-        this.mycustomerRecieveType = mycustomerRecieveType;
-        this.deleteOrder = deleteOrder;
-
+        this.mycustomerDevice= mycustomerDevice;
+        this.mycustomerBrand = mycustomerBrand;
+        this.mycustomerModel = mycustomerModel;
+        this.mycustomerFault = mycustomerFault;
+        this.mycustomerColor = mycustomerColor;
+        this.mycustomerRecieve = mycustomerRecieve;
     }
 
+    public display_order_method( String myCustomerName, String myCustomerNumber, String myCustomerEmail, String myCustomerAddress, String myCustomerCity, String myCustomerCountry, String mycustomerDevice, String mycustomerBrand, String mycustomerModel, String mycustomerFault, String mycustomerColor, String mycustomerRecieve) {
+
+
+        this.myCustomerName = myCustomerName;
+        this.myCustomerNumber = myCustomerNumber;
+        this.myCustomerEmail = myCustomerEmail;
+        this.myCustomerAddress = myCustomerAddress;
+        this.myCustomerCity = myCustomerCity;
+        this.myCustomerCountry = myCustomerCountry;
+        this.mycustomerDevice= mycustomerDevice;
+        this.mycustomerBrand = mycustomerBrand;
+        this.mycustomerModel = mycustomerModel;
+        this.mycustomerFault = mycustomerFault;
+        this.mycustomerColor = mycustomerColor;
+        this.mycustomerRecieve = mycustomerRecieve;
+    }
+
+    public String getMyCustomerId() {
+        return myCustomerId;
+    }
+
+    public void setMyCustomerId(String myCustomerId) {
+        this.myCustomerId = myCustomerId;
+    }
 
     public String getMyCustomerName() {
         return myCustomerName;
@@ -89,59 +116,53 @@ public class display_order_method {
         this.myCustomerCountry = myCustomerCountry;
     }
 
-    public String getMycustomerDeviceType() {
-        return mycustomerDeviceType;
+    public String getMycustomerDevice() {
+        return mycustomerDevice;
     }
 
-    public void setMycustomerDeviceType(String mycustomerDeviceType) {
-        this.mycustomerDeviceType = mycustomerDeviceType;
+    public void setMycustomerDevice(String mycustomerDevice) {
+        this.mycustomerDevice = mycustomerDevice;
     }
 
-    public String getMycustomerBrandType() {
-        return mycustomerBrandType;
+    public String getMycustomerBrand() {
+        return mycustomerBrand;
     }
 
-    public void setMycustomerBrandType(String mycustomerBrandType) {
-        this.mycustomerBrandType = mycustomerBrandType;
+    public void setMycustomerBrand(String mycustomerBrand) {
+        this.mycustomerBrand = mycustomerBrand;
     }
 
-    public String getMycustomerModelType() {
-        return mycustomerModelType;
+    public String getMycustomerModel() {
+        return mycustomerModel;
     }
 
-    public void setMycustomerModelType(String mycustomerModelType) {
-        this.mycustomerModelType = mycustomerModelType;
+    public void setMycustomerModel(String mycustomerModel) {
+        this.mycustomerModel = mycustomerModel;
     }
 
-    public String getMycustomerFaultType() {
-        return mycustomerFaultType;
+    public String getMycustomerFault() {
+        return mycustomerFault;
     }
 
-    public void setMycustomerFaultType(String mycustomerFaultType) {
-        this.mycustomerFaultType = mycustomerFaultType;
+    public void setMycustomerFault(String mycustomerFault) {
+        this.mycustomerFault = mycustomerFault;
     }
 
-    public String getMycustomerColorType() {
-        return mycustomerColorType;
+    public String getMycustomerColor() {
+        return mycustomerColor;
     }
 
-    public void setMycustomerColorType(String mycustomerColorType) {
-        this.mycustomerColorType = mycustomerColorType;
+    public void setMycustomerColor(String mycustomerColor) {
+        this.mycustomerColor = mycustomerColor;
     }
 
-    public String getMycustomerRecieveType() {
-        return mycustomerRecieveType;
+    public String getMycustomerRecieve() {
+        return mycustomerRecieve;
     }
 
-    public void setMycustomerRecieveType(String mycustomerRecieveType) {
-        this.mycustomerRecieveType = mycustomerRecieveType;
-    }
-
-    public Button getDeleteOrder() {
-        return deleteOrder;
-    }
-
-    public void setDeleteOrder(Button deleteOrder) {
-        this.deleteOrder = deleteOrder;
+    public void setMycustomerRecieve(String mycustomerRecieve) {
+        this.mycustomerRecieve = mycustomerRecieve;
     }
 }
+
+

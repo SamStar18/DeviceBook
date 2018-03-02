@@ -7,10 +7,7 @@
     tools:context="com.devicebook.devicebook.displayActivity">
 
 
-    <include
-        android:id="@+id/appbar_constraint"
 
-        layout="@layout/drawerlayout" />
 
     <ListView
         android:id="@+id/customerListView"

@@ -4,8 +4,10 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 import android.text.method.KeyListener;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +36,9 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
    private Context cscontext;
     int csresource;
     LayoutInflater inflater;
+    int custId ;
+    int custNumber;
+    mydbhandler dbHelper;
 
     public custom_csdetail_adapter(Context context, int resource, ArrayList<display_object_adapter> objects) {
         super(context, resource, objects);
@@ -44,6 +49,7 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
     @NonNull
     @Override
     public View getView(int position,  View convertView, ViewGroup parent) {
+        String csid = getItem(position).getCsid();
        String name = getItem(position).getName();
          String phoneNumber = getItem(position).getPhoneNumber();
         String email  = getItem(position).getEmail();
@@ -53,7 +59,7 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
 
          Button editbutton1 = getItem(position).getEditbutton1();
         Button csDeleteButton1 = getItem(position).getCsDeleteButton1();
-     String csdeviceType = getItem(position).getCsdeviceType();
+     String csdevice = getItem(position).getCsdeviceType();
      final String csdeviceModel= getItem(position).getCsdeviceModel();
      String csdeviceBrand  = getItem(position).getCsdeviceBrand();
      String csfaultspinner = getItem(position).getCsfaultspinner();
@@ -69,7 +75,7 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
          convertView = inflater.inflate(csresource,parent,false);
 
 
-
+    final TextView csId = convertView.findViewById(R.id.csId);
         final EditText tvname = convertView.findViewById(R.id.csName);
         final EditText tvnumber = convertView.findViewById(R.id.csPhoneNumber);
         final EditText tvemail = convertView.findViewById(R.id.csEmail);
@@ -80,7 +86,7 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
         final Button csDeletebtn1 = convertView.findViewById(R.id.csDeleteButton1);
 
 
-        final EditText tvdevicetype = convertView.findViewById(R.id.csdeviceType);
+        final EditText tvdevice = convertView.findViewById(R.id.csdeviceType);
         final EditText tvmodel = convertView.findViewById(R.id.csModel);
         final EditText tvbrand = convertView.findViewById(R.id.csBrand);
         final EditText tvfault = convertView.findViewById(R.id.csFault);
@@ -90,17 +96,17 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
         final Button csDeletebtn2 = convertView.findViewById(R.id.csDeleteButton2);
         final Button csConfirmbtn = convertView.findViewById(R.id.csConfirmButton);
 
-
+        csId.setText("3435");
         tvname.setText(name);
         tvnumber.setText(phoneNumber);
         tvemail.setText(email);
         tvaddress.setText(addressline1);
         tvcity.setText(city);
         tvcountry.setText(country);
+        csId.setText(String.valueOf(121));
 
 
-
-        tvdevicetype.setText(csdeviceType);
+        tvdevice.setText(csdevice);
         tvmodel.setText(csdeviceModel);
         tvbrand.setText(csdeviceBrand);
         tvfault.setText(csfaultspinner);
@@ -118,7 +124,7 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
         tvaddress.setSelection(tvaddress.getText().length());
         tvcountry.setSelection(tvcountry.getText().length());
 
-        tvdevicetype.setSelection(tvdevicetype.getText().length());
+        tvdevice.setSelection(tvdevice.getText().length());
         tvmodel.setSelection(tvmodel.getText().length());
         tvbrand.setSelection(tvbrand.getText().length());
         tvcolor.setSelection( tvcolor.getText().length());
@@ -195,20 +201,22 @@ btn2.setOnClickListener(new View.OnClickListener() {
 
 
 
-        tvdevicetype.setFocusableInTouchMode(true);
-        tvdevicetype.requestFocus();
+        tvdevice.setFocusableInTouchMode(true);
+        tvdevice.requestFocus();
         InputMethodManager devicetypeInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-        devicetypeInput.showSoftInput(tvdevicetype, 0);
+        devicetypeInput.showSoftInput(tvdevice, 0);
 
 
-        InputMethodManager modelInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-        modelInput.showSoftInput(tvmodel, 0);
-        tvmodel.setFocusableInTouchMode(true);
+
 
 
         InputMethodManager brandInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
         brandInput.showSoftInput(tvbrand, 0);
         tvbrand.setFocusableInTouchMode(true);
+
+        InputMethodManager modelInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        modelInput.showSoftInput(tvmodel, 0);
+        tvmodel.setFocusableInTouchMode(true);
 
 
         InputMethodManager faultInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -237,7 +245,7 @@ btn2.setOnClickListener(new View.OnClickListener() {
                 if(actionId==EditorInfo.IME_ACTION_DONE){
                     tvcollectionOptions.clearFocus();
                     tvcollectionOptions.setFocusableInTouchMode(false);
-                    tvdevicetype.setFocusableInTouchMode(false);
+                    tvdevice.setFocusableInTouchMode(false);
                     tvmodel.setFocusableInTouchMode(false);
                     tvbrand.setFocusableInTouchMode(false);
                     tvcolor.setFocusableInTouchMode(false);
@@ -255,6 +263,10 @@ btn2.setOnClickListener(new View.OnClickListener() {
         csConfirmbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
+
 
                 String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
                 String lettersValid = "[a-zA-Z ]+";
@@ -296,7 +308,7 @@ btn2.setOnClickListener(new View.OnClickListener() {
                     return;
                 }
 
-                else if(tvdevicetype.getText().toString().contentEquals("")){
+                else if(tvdevice.getText().toString().contentEquals("")){
                     Toast.makeText(view.getContext(),"Device type is Empty",Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -328,11 +340,30 @@ btn2.setOnClickListener(new View.OnClickListener() {
 
 
 
+
+
+
+
                 else{
 
+                   Intent CustomerIntent = new Intent(view.getContext().getApplicationContext(),LogOn.class);
 
-                    //Intent testIntent = new Intent(view.getContext().getApplicationContext(),phone_avtivity.class);
-                    //view.getContext().startActivity(new Intent(testIntent));
+
+                   // Toast.makeText(view.getContext(),"Data Saved",Toast.LENGTH_SHORT).show();
+                    dbHelper = new mydbhandler(view.getContext());
+
+                    SQLiteDatabase mDatabase = dbHelper.getWritableDatabase();
+
+                    Log.d("Insert: ", "Inserting ..");
+
+
+                    display_order_method customer = new display_order_method(csId.getText().toString(), tvname.getText().toString(), tvnumber.getText().toString(), tvemail.getText().toString() ,tvaddress.getText().toString(),tvcity.getText().toString(), tvcountry.getText().toString(), tvdevice.getText().toString(), tvbrand.getText().toString(), tvmodel.getText().toString(), tvfault.getText().toString(), tvcolor.getText().toString(), tvcollectionOptions.getText().toString());
+                    dbHelper.addcustomer(customer);
+
+
+
+                    view.getContext().startActivity(CustomerIntent);
+
 
 
                 }

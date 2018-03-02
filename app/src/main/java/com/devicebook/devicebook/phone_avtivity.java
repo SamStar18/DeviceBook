@@ -268,8 +268,9 @@ public class phone_avtivity extends AppCompatActivity {
 
             Intent bookingdetailsintent = new Intent(getApplicationContext(),productanduserdetails.class);
             bookingdetailsintent.putExtra("csdeviceType",deviceType.getSelectedItem().toString());
-            bookingdetailsintent.putExtra("csmodel",deviceModel.getSelectedItem().toString());
             bookingdetailsintent.putExtra("csbrand",deviceBrand.getSelectedItem().toString());
+            bookingdetailsintent.putExtra("csmodel",deviceModel.getSelectedItem().toString());
+
             bookingdetailsintent.putExtra("csfault",faultSpinner.getSelectedItem().toString());
             bookingdetailsintent.putExtra("cscolor",mycolorSpinner.getSelectedItem().toString());
             bookingdetailsintent.putExtra("cscollection",collectionradio = ((RadioButton) findViewById(mycollectionOptions.getCheckedRadioButtonId())).getText().toString());

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Device Book</string>
-    <string name="menu_settings">Settings</string>
+    <string name="menu_settings">Main Menu</string>
     <string name="homeHeader">Device Book</string>
     <string name="homeImg">Home Image</string>
     <string name="homeSubtitle">Booking your repair is now as easy as reading a book</string>
@@ -103,6 +103,15 @@
     <string name="CustomerRecieveType">Recieve</string>
     <string name="ChangeText">If you change your mind you can delete your order using button below</string>
     <string name="DeleteOrder">Delete Order</string>
+    <string name="CustomerId">Customer Id</string>
+    <string name="csId">Customer Id</string>
+    <string name="logOnSub">Please Enter your name</string>
+    <string name="nameEntry">Name</string>
+    <string name="nameEntryB">Enter</string>
+    <string name="nameEntryButton">Enter</string>
+    <string name="altersub">Enter the name of the table you would like to Alter</string>
+    <string name="alterEntry">Enter Name</string>
+    <string name="alterDeleteButton">Delete</string>
 
 
     <string-array name="phoneMakes">

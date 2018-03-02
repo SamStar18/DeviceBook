@@ -48,7 +48,12 @@ String listcaption;
                 }
 
                 if(phonecaptionlists[i] == orderDisplay){
-                    startActivity(new Intent (Product.this,Display_Order_Activity.class));
+
+
+
+
+
+                    startActivity(new Intent (Product.this,LogOn.class));
                 }
 
 
