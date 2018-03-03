@@ -37,30 +37,22 @@ public class LogOn extends AppCompatActivity {
     }
 
     public Boolean entrycheck(View view) {
+
         String namechecker = nameEntry.getText().toString();
-        boolean namecheck =dbHelper.checkcustomer(namechecker) ;
-dbHelper.findCustomer();
 
-boolean mynamecheck = dbHelper.checkcustomer(namechecker).equals(dbHelper.findCustomer());
 
-        if (namechecker.isEmpty()) {
-            Toast.makeText(LogOn.this, "Cannot retrieve data ", Toast.LENGTH_SHORT).show();
-            return false;
+        dbHelper.findCustomer(namechecker);
 
-        }
-
-        else if(mynamecheck) {
+         if(dbHelper.checkcustomer(namechecker)) {
             Intent LogIntent = new Intent(LogOn.this, Display_Order_Activity.class);
 
             LogIntent.putExtra("Name", nameEntry.getText().toString().trim());
             emptynametext();
             startActivity(LogIntent);
+
         }
 
-        else {
-            Toast.makeText(LogOn.this, "Cannot retrieve data ", Toast.LENGTH_SHORT).show();
-            return false;
-        }
+
 
 
         return true;

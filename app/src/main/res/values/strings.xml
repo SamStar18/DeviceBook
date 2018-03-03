@@ -109,7 +109,7 @@
     <string name="nameEntry">Name</string>
     <string name="nameEntryB">Enter</string>
     <string name="nameEntryButton">Enter</string>
-    <string name="altersub">Enter the name of the table you would like to Alter</string>
+    <string name="altersub">Enter the ID of the table you would like to Alter</string>
     <string name="alterEntry">Enter Name</string>
     <string name="alterDeleteButton">Delete</string>
 

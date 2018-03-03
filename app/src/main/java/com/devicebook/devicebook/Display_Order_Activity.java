@@ -51,9 +51,13 @@ dbHelper = new mydbhandler(Display_Order_Activity.this);
 String findName = LogIntent.getStringExtra("Name");
          mDatabase = dbHelper.getWritableDatabase();
         mDatabase = dbHelper.getWritableDatabase();
+
+
+
+
        ArrayList listCustomers = new ArrayList<>();
        listCustomers.clear();
-       listCustomers.addAll(dbHelper.findCustomer());
+       listCustomers.addAll(dbHelper.findCustomer(findName));
 
 
         display_order_listview = findViewById(R.id.display_order_listview);

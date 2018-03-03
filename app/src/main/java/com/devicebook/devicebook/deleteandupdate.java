@@ -32,17 +32,17 @@ EditText alterEntry;
 
         String entry = alterEntry.getText().toString();
 
- if(entry.isEmpty() || dbHelper.checkcustomer(null)) {
+ if(entry.isEmpty()) {
             Toast.makeText(deleteandupdate.this, "Table doesnt exist ", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-         else if((dbHelper.checkcustomer(entry))){
-            dbHelper.deletecustomer(alterEntry.getText().toString());
+         else if((dbHelper.checkcustomerdelete(entry))){
+            dbHelper.deletecustomer(entry);
 
             Toast.makeText(deleteandupdate.this, "Table Deleted ", Toast.LENGTH_SHORT).show();
-            Intent returntodatabase = new Intent(deleteandupdate.this,Display_Order_Activity.class);
-            startActivity(returntodatabase);
+            //Intent returntodatabase = new Intent(deleteandupdate.this,Display_Order_Activity.class);
+           // startActivity(returntodatabase);
 
         }
 

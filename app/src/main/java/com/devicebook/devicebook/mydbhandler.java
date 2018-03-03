@@ -103,11 +103,13 @@ public class mydbhandler extends SQLiteOpenHelper {
 
 
 
-    public List<display_order_method> findCustomer() {
+    public List<display_order_method> findCustomer(String name) {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
+        String selection = CustomerName_column + " = ?";
 
+        String[] selectionArgs = {name};
         String[] columns = {
                 CustomerId_column,
                 CustomerName_column,
@@ -131,8 +133,8 @@ public class mydbhandler extends SQLiteOpenHelper {
 
         Cursor cursor = db.query(TABLE_CUSTOMER, //Table to query
                 columns,    //columns to return
-                null,        //columns for the WHERE clause
-                null,        //The values for the WHERE clause
+                selection,        //columns for the WHERE clause
+                selectionArgs,        //The values for the WHERE clause
                 null,       //group the rows
                 null,       //filter by row groups
                 sortOrder); //The sort order
@@ -169,7 +171,7 @@ public class mydbhandler extends SQLiteOpenHelper {
     }
 
     public Boolean checkcustomer(String name){
-
+        List<display_order_method> checklist = new ArrayList<display_order_method>();
         String[] columns = {CustomerName_column};
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -183,13 +185,28 @@ public class mydbhandler extends SQLiteOpenHelper {
                 selectionArgs,              //The values for the WHERE clause
                 null,                       //group the rows
                 null,                      //filter by row groups
-                null);                      //The sort order
+                null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                display_order_method customer = new display_order_method();
+                customer.setMyCustomerName(cursor.getString(cursor.getColumnIndex(CustomerName_column)));
+
+                checklist.add(customer);
+            } while (cursor.moveToNext());
+        }
+        //The sort order
         int cursorCount = cursor.getCount();
         cursor.close();
         db.close();
 
-        if (cursorCount > 0) {
-            return true;
+        if (cursorCount < 1) {
+            Toast.makeText(cscontext, "Double check entry ", Toast.LENGTH_SHORT).show();
+            return false;
+
+        }
+        else{
+
         }
 
 
@@ -203,9 +220,10 @@ public class mydbhandler extends SQLiteOpenHelper {
     public String deletecustomer(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        // db.delete(TABLE_CUSTOMER," WHERE =" ,new String[]{name});
 
-        db.execSQL("DELETE FROM "+TABLE_CUSTOMER+" WHERE " + CustomerId_column + "=" +id);
+
+        
+        db.delete(TABLE_CUSTOMER, CustomerId_column + "=?", new String[]{id});
 
         db.close();
 
@@ -213,6 +231,50 @@ public class mydbhandler extends SQLiteOpenHelper {
     }
 
 
+    public Boolean checkcustomerdelete(String id){
+        List<display_order_method> checklist = new ArrayList<display_order_method>();
+        String[] columns = {CustomerId_column};
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String selection = CustomerId_column + " = ?";
+
+        String[] selectionArgs = {id};
+
+        Cursor cursor = db.query(TABLE_CUSTOMER, //Table to query
+                columns,                    //columns to return
+                selection,                  //columns for the WHERE clause
+                selectionArgs,              //The values for the WHERE clause
+                null,                       //group the rows
+                null,                      //filter by row groups
+                null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                display_order_method customer = new display_order_method();
+                customer.setMyCustomerId(cursor.getString(cursor.getColumnIndex(CustomerId_column)));
+
+                checklist.add(customer);
+            } while (cursor.moveToNext());
+        }
+        //The sort order
+        int cursorCount = cursor.getCount();
+        cursor.close();
+        db.close();
+
+        if (cursorCount < 1) {
+            Toast.makeText(cscontext, "Double check entry ", Toast.LENGTH_SHORT).show();
+            return false;
+
+        }
+        else{
+
+        }
+
+
+
+
+        return true;
+    }
 
 
 }
