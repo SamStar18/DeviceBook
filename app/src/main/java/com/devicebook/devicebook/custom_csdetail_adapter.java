@@ -50,8 +50,8 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
     @Override
     public View getView(int position,  View convertView, ViewGroup parent) {
         String csid = getItem(position).getCsid();
-       String name = getItem(position).getName();
-         String phoneNumber = getItem(position).getPhoneNumber();
+       String fname = getItem(position).getFname();
+         String lname = getItem(position).getLname();
         String email  = getItem(position).getEmail();
          String addressline1 = getItem(position).getAddressline1();
         String city = getItem(position).getCity();
@@ -76,8 +76,8 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
 
 
     final TextView csId = convertView.findViewById(R.id.csId);
-        final EditText tvname = convertView.findViewById(R.id.csName);
-        final EditText tvnumber = convertView.findViewById(R.id.csPhoneNumber);
+        final EditText tvfname = convertView.findViewById(R.id.csfname);
+        final EditText tvlname = convertView.findViewById(R.id.cslname);
         final EditText tvemail = convertView.findViewById(R.id.csEmail);
         final EditText tvaddress = convertView.findViewById(R.id.csAddress);
         final  EditText tvcity = convertView.findViewById(R.id.csCity);
@@ -97,8 +97,8 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
         final Button csConfirmbtn = convertView.findViewById(R.id.csConfirmButton);
 
         csId.setText("3435");
-        tvname.setText(name);
-        tvnumber.setText(phoneNumber);
+        tvfname.setText(fname);
+        tvlname.setText(lname);
         tvemail.setText(email);
         tvaddress.setText(addressline1);
         tvcity.setText(city);
@@ -117,9 +117,9 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
         csConfirmbtn.setText("Save and Continue");
 
 
-        tvname.setSelection(tvname.getText().length());
+        tvfname.setSelection(tvfname.getText().length());
         tvemail.setSelection(tvemail.getText().length());
-        tvnumber.setSelection(tvnumber.getText().length());
+        tvlname.setSelection(tvlname.getText().length());
         tvcity.setSelection(tvcity.getText().length());
         tvaddress.setSelection(tvaddress.getText().length());
         tvcountry.setSelection(tvcountry.getText().length());
@@ -138,16 +138,16 @@ btn1.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
 
-        tvname.setFocusableInTouchMode(true);
-        tvname.requestFocus();
+        tvfname.setFocusableInTouchMode(true);
+        tvfname.requestFocus();
         InputMethodManager nameInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-        nameInput.showSoftInput(tvname, 0);
+        nameInput.showSoftInput(tvfname, 0);
 
 
 
         InputMethodManager numberInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-        numberInput.showSoftInput(tvnumber, 0);
-        tvnumber.setFocusableInTouchMode(true);
+        numberInput.showSoftInput(tvlname, 0);
+        tvlname.setFocusableInTouchMode(true);
 
 
         InputMethodManager emailInput = (InputMethodManager)view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -181,8 +181,8 @@ btn1.setOnClickListener(new View.OnClickListener() {
                 if(actionId==EditorInfo.IME_ACTION_DONE){
                     tvcountry.clearFocus();
                     tvcountry.setFocusableInTouchMode(false);
-                    tvname.setFocusableInTouchMode(false);
-                    tvnumber.setFocusableInTouchMode(false);
+                    tvfname.setFocusableInTouchMode(false);
+                    tvlname.setFocusableInTouchMode(false);
                     tvemail.setFocusableInTouchMode(false);
                     tvaddress.setFocusableInTouchMode(false);
                     tvcity.setFocusableInTouchMode(false);
@@ -270,14 +270,14 @@ btn2.setOnClickListener(new View.OnClickListener() {
 
                 String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
                 String lettersValid = "[a-zA-Z ]+";
-                if(tvname.getText().toString().contentEquals("")){
-                    Toast.makeText(view.getContext(),"Name is Empty",Toast.LENGTH_SHORT).show();
+                if(tvfname.getText().toString().contentEquals("")){
+                    Toast.makeText(view.getContext(),"First Name is Empty",Toast.LENGTH_SHORT).show();
                     return;
                 }
 
 
-                else if(tvnumber.getText().toString().contentEquals("")){
-                    Toast.makeText(view.getContext(),"Number is Empty",Toast.LENGTH_SHORT).show();
+                else if(tvlname.getText().toString().contentEquals("")){
+                    Toast.makeText(view.getContext(),"Last Name is Empty",Toast.LENGTH_SHORT).show();
                      return;
                 }
 
@@ -357,7 +357,7 @@ btn2.setOnClickListener(new View.OnClickListener() {
                     Log.d("Insert: ", "Inserting ..");
 
 
-                    display_order_method customer = new display_order_method(csId.getText().toString(), tvname.getText().toString(), tvnumber.getText().toString(), tvemail.getText().toString() ,tvaddress.getText().toString(),tvcity.getText().toString(), tvcountry.getText().toString(), tvdevice.getText().toString(), tvbrand.getText().toString(), tvmodel.getText().toString(), tvfault.getText().toString(), tvcolor.getText().toString(), tvcollectionOptions.getText().toString());
+                    display_order_method customer = new display_order_method(csId.getText().toString(), tvfname.getText().toString(), tvlname.getText().toString(), tvemail.getText().toString() ,tvaddress.getText().toString(),tvcity.getText().toString(), tvcountry.getText().toString(), tvdevice.getText().toString(), tvbrand.getText().toString(), tvmodel.getText().toString(), tvfault.getText().toString(), tvcolor.getText().toString(), tvcollectionOptions.getText().toString());
                     dbHelper.addcustomer(customer);
 
 
@@ -381,7 +381,7 @@ btn2.setOnClickListener(new View.OnClickListener() {
 
                 ArrayList<EditText> entry1 = new ArrayList<>();
 
-                Collections.addAll(entry1,tvname,tvnumber,tvemail,tvaddress,tvcity,tvcountry);
+                Collections.addAll(entry1,tvfname,tvlname,tvemail,tvaddress,tvcity,tvcountry);
 
                 entry1.removeAll(entry1);
 

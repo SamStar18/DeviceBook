@@ -28,9 +28,9 @@
     <string name="tabletBrand">Tablet Brand</string>
     <string name="tabletOperaringSystem">Tablet Operating System</string>
     <string name="customerDetailsSubtitle">Customer Details</string>
-    <string name="nameSubtitle">Customer\'s Fullname</string>
+    <string name="nameSubtitle">Customer\'s First Name</string>
     <string name="nameHint">Enter your name</string>
-    <string name="mobileDetails">Contact Number</string>
+    <string name="mobileDetails">Customer\'s Last Name</string>
     <string name="mobileHint">Enter contact number</string>
     <string name="customerAddress1">Address line </string>
     <string name="address1">Enter address</string>
@@ -55,8 +55,8 @@
 
     <string name="csCity">City   </string>
     <string name="csCountry">Country</string>
-    <string name="csName2">Name:</string>
-    <string name="csPhoneNumber2">Number:</string>
+    <string name="csName2">First Name:</string>
+    <string name="csPhoneNumber2">Last Name:</string>
     <string name="csEmail2">Email:</string>
 
     <string name="csCity2">City:</string>
@@ -87,9 +87,9 @@
     <string name="csDeletebtn1">Delete</string>
     <string name="csDeleteBtn2">Delete</string>
     <string name="orderIntro">Your device booking details are listed below:</string>
-    <string name="personalIntro">Your peronal details are</string>
+    <string name="personalIntro">Your personal details are</string>
     <string name="introBooking">Thank you for booking with DeviceBook</string>
-    <string name="customerName">Name</string>
+    <string name="customerName">First Name</string>
     <string name="customerNumber">Number</string>
     <string name="customerEmail">Email</string>
     <string name="customerAddress">Address 1</string>
@@ -102,16 +102,30 @@
     <string name="CustomerColorType">Color</string>
     <string name="CustomerRecieveType">Recieve</string>
     <string name="ChangeText">If you change your mind you can delete your order using button below</string>
-    <string name="DeleteOrder">Delete Order</string>
+    <string name="DeleteOrder">Alter Order</string>
     <string name="CustomerId">Customer Id</string>
     <string name="csId">Customer Id</string>
     <string name="logOnSub">Please Enter your name</string>
-    <string name="nameEntry">Name</string>
     <string name="nameEntryB">Enter</string>
     <string name="nameEntryButton">Enter</string>
     <string name="altersub">Enter the ID of the table you would like to Alter</string>
     <string name="alterEntry">Enter Name</string>
     <string name="alterDeleteButton">Delete</string>
+    <string name="fname">Enter First Name</string>
+    <string name="lname">Enter Last Name</string>
+    <string name="customerlName">Last Name</string>
+    <string name="csidsub">Customer Id</string>
+    <string name="csaddresssub">Address</string>
+    <string name="fnamesub">First Name</string>
+    <string name="lnamesub">Last Name</string>
+    <string name="emailsub">Email</string>
+    <string name="devicesub">Device Type</string>
+    <string name="brandsub">Brand</string>
+    <string name="modelsub">Model</string>
+    <string name="faultsub">Fault</string>
+    <string name="colorsub">Color</string>
+    <string name="collectionsub">Collection Option</string>
+    <string name="NameEntry">Name</string>
 
 
     <string-array name="phoneMakes">

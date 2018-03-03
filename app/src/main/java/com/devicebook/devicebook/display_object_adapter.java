@@ -8,8 +8,8 @@ import android.widget.Button;
 
 public class display_object_adapter {
     private String csid;
-   private String name;
-    private String phoneNumber;
+   private String fname;
+    private String lname;
     private String email;
     private String addressline1;
     private String city;
@@ -29,10 +29,10 @@ public class display_object_adapter {
     private Button csConfirmButton;
 
 
-    public display_object_adapter(String csid,String name, String phoneNumber, String email, String addressline1, String city, String country, Button editbutton1,Button csDeleteButton1, String csdeviceType,String csdeviceBrand, String csdeviceModel,  String csfaultspinner, String cscolorspinner, String csCollectionOptions, Button editbutton2,Button csDeleteButton2,Button csConfirmButton) {
+    public display_object_adapter(String csid,String fname, String lname, String email, String addressline1, String city, String country, Button editbutton1,Button csDeleteButton1, String csdeviceType,String csdeviceBrand, String csdeviceModel,  String csfaultspinner, String cscolorspinner, String csCollectionOptions, Button editbutton2,Button csDeleteButton2,Button csConfirmButton) {
         this.csid = csid;
-        this.name = name;
-        this.phoneNumber = phoneNumber;
+        this.fname = fname;
+        this.lname = lname;
         this.email = email;
         this.addressline1 = addressline1;
         this.city = city;
@@ -59,20 +59,20 @@ public class display_object_adapter {
         this.csid = csid;
     }
 
-    public String getName() {
-        return name;
+    public String getFname() {
+        return fname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFname(String fname) {
+        this.fname = fname;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getLname() {
+        return lname;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setLname(String lname) {
+        this.lname = lname;
     }
 
     public String getEmail() {

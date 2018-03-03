@@ -18,12 +18,12 @@ public class mydbhandler extends SQLiteOpenHelper {
 
     mydbhandler dbHelper;
 
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_NAME = "customerOrderDetails.db";
     private static final String TABLE_CUSTOMER = "customerTable";
     public static final String CustomerId_column = "Id";
-    public static final String CustomerName_column = "Sam";
-    public static final String CustomerNumber_column = " Number";
+    public static final String CustomerfName_column = "fname";
+    public static final String lastname_column = "lname";
     public static final String CustomerEmail_column = "Email";
     public static final String CustomerAddress_column = "Address";
     public static final String CustomerCity_column = "City";
@@ -48,8 +48,8 @@ public class mydbhandler extends SQLiteOpenHelper {
         String query = "CREATE TABLE " +
                 TABLE_CUSTOMER + "("
                 + CustomerId_column + " INTEGER PRIMARY KEY, " +
-                CustomerName_column + " TEXT, " +
-                CustomerNumber_column + " TEXT, " +
+                CustomerfName_column + " TEXT, " +
+                lastname_column + " TEXT, " +
                 CustomerEmail_column + " TEXT, " +
                 CustomerAddress_column + " TEXT, " +
                 CustomerCity_column + " TEXT, " +
@@ -75,8 +75,8 @@ public class mydbhandler extends SQLiteOpenHelper {
     public void addcustomer(display_order_method customer) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(CustomerName_column, customer.getMyCustomerName());
-        values.put(CustomerNumber_column, customer.getMyCustomerNumber());
+        values.put(CustomerfName_column, customer.getMyCustomerfName());
+        values.put(lastname_column, customer.getMyCustomerlname());
         values.put(CustomerEmail_column, customer.getMyCustomerEmail());
         values.put(CustomerAddress_column, customer.getMyCustomerAddress());
         values.put(CustomerCity_column, customer.getMyCustomerCity());
@@ -89,7 +89,7 @@ public class mydbhandler extends SQLiteOpenHelper {
         values.put(customerRecieve_column, customer.getMycustomerRecieve());
 
 
-        long cxInserted = db.insert(TABLE_CUSTOMER, null, values);
+         long cxInserted = db.insert(TABLE_CUSTOMER, null, values);
 
         if (cxInserted != -1) {
             Toast.makeText(cscontext, "Saved to database ", Toast.LENGTH_SHORT).show();
@@ -107,13 +107,13 @@ public class mydbhandler extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String selection = CustomerName_column + " = ?";
+        String selection = CustomerfName_column + " = ?";
 
         String[] selectionArgs = {name};
         String[] columns = {
                 CustomerId_column,
-                CustomerName_column,
-                CustomerNumber_column,
+                CustomerfName_column,
+                lastname_column,
                 CustomerEmail_column,
                 CustomerAddress_column,
                 CustomerCity_column,
@@ -126,7 +126,7 @@ public class mydbhandler extends SQLiteOpenHelper {
                 customerRecieve_column
         };
         // sorting orders
-        String sortOrder = CustomerName_column + " ASC";
+        String sortOrder = CustomerfName_column + " ASC";
 
         List<display_order_method> customerList = new ArrayList<display_order_method>();
 
@@ -144,8 +144,8 @@ public class mydbhandler extends SQLiteOpenHelper {
             do {
                 display_order_method customer = new display_order_method();
                 customer.setMyCustomerId(cursor.getString(cursor.getColumnIndex(CustomerId_column)));
-                customer.setMyCustomerName(cursor.getString(cursor.getColumnIndex(CustomerName_column)));
-                //customer.setMyCustomerNumber(Integer.parseInt(cursor.getString(cursor.getColumnIndex(CustomerNumber_column))));
+                customer.setMyCustomerfName(cursor.getString(cursor.getColumnIndex(CustomerfName_column)));
+                customer.setMyCustomerlname(cursor.getString(cursor.getColumnIndex(lastname_column)));
                 customer.setMyCustomerEmail(cursor.getString(cursor.getColumnIndex(CustomerEmail_column)));
                 customer.setMyCustomerAddress(cursor.getString(cursor.getColumnIndex(CustomerAddress_column)));
                 customer.setMyCustomerCity(cursor.getString(cursor.getColumnIndex(CustomerCity_column)));
@@ -172,10 +172,10 @@ public class mydbhandler extends SQLiteOpenHelper {
 
     public Boolean checkcustomer(String name){
         List<display_order_method> checklist = new ArrayList<display_order_method>();
-        String[] columns = {CustomerName_column};
+        String[] columns = {CustomerfName_column};
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String selection = CustomerName_column + " = ?";
+        String selection = CustomerfName_column + " = ?";
 
         String[] selectionArgs = {name};
 
@@ -190,7 +190,7 @@ public class mydbhandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 display_order_method customer = new display_order_method();
-                customer.setMyCustomerName(cursor.getString(cursor.getColumnIndex(CustomerName_column)));
+                customer.setMyCustomerlname(cursor.getString(cursor.getColumnIndex(CustomerfName_column)));
 
                 checklist.add(customer);
             } while (cursor.moveToNext());

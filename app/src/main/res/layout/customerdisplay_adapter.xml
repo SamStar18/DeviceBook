@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/csName"
+        android:id="@+id/csfname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -32,7 +32,7 @@
         android:hint="@string/csName"
         android:imeOptions="actionNext"
         android:inputType="text"
-        android:nextFocusDown="@+id/csPhoneNumber"
+        android:nextFocusDown="@+id/cslname"
         android:textColor="@color/colorPrimary"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +40,7 @@
 
 
     <EditText
-        android:id="@+id/csPhoneNumber"
+        android:id="@+id/cslname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -55,8 +55,8 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/csPhoneNumber2"
-        app:layout_constraintTop_toBottomOf="@+id/csName" />
+        app:layout_constraintStart_toEndOf="@+id/csfnamehint"
+        app:layout_constraintTop_toBottomOf="@+id/csfname" />
 
     <EditText
         android:id="@+id/csEmail"
@@ -74,7 +74,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.983"
         app:layout_constraintStart_toEndOf="@+id/csEmail2"
-        app:layout_constraintTop_toBottomOf="@+id/csPhoneNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/cslname" />
 
     <EditText
         android:id="@+id/csAddress"
@@ -136,16 +136,16 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
         android:text="@string/csName2"
-        app:layout_constraintEnd_toStartOf="@+id/csName"
-        app:layout_constraintHorizontal_bias="0.016"
+        app:layout_constraintEnd_toStartOf="@+id/csfname"
+        app:layout_constraintHorizontal_bias="0.018"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerDetailsSummary" />
 
     <TextView
-        android:id="@+id/csPhoneNumber2"
+        android:id="@+id/csfnamehint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:text="@string/csPhoneNumber2"
         app:layout_constraintStart_toStartOf="parent"
@@ -155,11 +155,11 @@
         android:id="@+id/csEmail2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:text="@string/csEmail2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/csPhoneNumber2" />
+        app:layout_constraintTop_toBottomOf="@+id/csfnamehint" />
 
     <TextView
         android:id="@+id/csCity2"
@@ -180,7 +180,7 @@
         android:layout_marginTop="28dp"
         android:text="@string/csCountry2"
         app:layout_constraintEnd_toStartOf="@+id/csCountry"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.018"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csCity2" />
 

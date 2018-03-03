@@ -17,8 +17,8 @@ import java.util.Locale;
 public class productanduserdetails extends AppCompatActivity {
 
     private Spinner countrySpinner;
-    private EditText name;
-    private EditText mobileHint;
+    private EditText fname;
+    private EditText lname;
     private EditText address1;
     private EditText city;
     private EditText email;
@@ -34,8 +34,8 @@ public class productanduserdetails extends AppCompatActivity {
 
 
         countrySpinner = findViewById(R.id.countrySpinner);
-        name = findViewById(R.id.name);
-        mobileHint = findViewById(R.id.mobileHint);
+        fname = findViewById(R.id.fname);
+        lname = findViewById(R.id.lname);
         address1 = findViewById(R.id.address1);
         city = findViewById(R.id.city);
         email = findViewById(R.id.email);
@@ -78,11 +78,11 @@ public class productanduserdetails extends AppCompatActivity {
 
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
-        if(name.getText().toString().contentEquals("")){
+        if(fname.getText().toString().contentEquals("")){
            Toast.makeText(productanduserdetails.this,"Please Enter your Full Name " , Toast.LENGTH_SHORT).show();
             return;
         }
-        else if(mobileHint.getText().toString().contentEquals("")){
+        else if(lname.getText().toString().contentEquals("")){
             Toast.makeText(productanduserdetails.this,"Please Enter your Mobile Number " , Toast.LENGTH_SHORT).show();
             return;
         }
@@ -122,10 +122,10 @@ public class productanduserdetails extends AppCompatActivity {
 
             Intent csdetailsintent = new Intent(getApplicationContext(),displayActivity.class);
 
-            csdetailsintent.putExtra("csname",name.getText().toString());
+            csdetailsintent.putExtra("csfname",fname.getText().toString());
+            csdetailsintent.putExtra("cslname",lname.getText().toString());
             csdetailsintent.putExtra("csemail",email.getText().toString());
             csdetailsintent.putExtra("csaddress",address1.getText().toString());
-            csdetailsintent.putExtra("csmobile",mobileHint.getText().toString());
             csdetailsintent.putExtra("cscity",city.getText().toString());
             csdetailsintent.putExtra("cscountry",countrySpinner.getSelectedItem().toString());
 

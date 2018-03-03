@@ -45,7 +45,7 @@
         <activity
             android:name=".Display_Order_Activity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.drawerlayout.noActionBar"
+            android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".LogOn"

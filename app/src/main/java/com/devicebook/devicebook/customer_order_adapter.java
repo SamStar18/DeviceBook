@@ -1,26 +1,16 @@
 package com.devicebook.devicebook;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Created by Sam on 20/02/2018.
@@ -35,8 +25,8 @@ SQLiteDatabase mdatabase;
     ArrayList<display_order_method> customerlist;
 
     TextView tvcsid;
-    TextView tvcsname;
-    TextView tvcsnumber;
+    TextView tvfname;
+    TextView tvlname;
     TextView tvcsemail;
     TextView tvcsaddress;
     TextView tvcscity;
@@ -66,8 +56,8 @@ SQLiteDatabase mdatabase;
         convertView = myinflater.inflate(csresource, parent, false);
 
         String customerId = getItem(position).getMyCustomerId();
-        String customerName = getItem(position).getMyCustomerName();
-        String customerNumber = getItem(position).getMyCustomerNumber();
+        String customerfName = getItem(position).getMyCustomerfName();
+        String customerlname = getItem(position).getMyCustomerlname();
         String customerEmail = getItem(position).getMyCustomerEmail();
         String customerAddress = getItem(position).getMyCustomerAddress();
         String customerCity = getItem(position).getMyCustomerCity();
@@ -83,8 +73,8 @@ SQLiteDatabase mdatabase;
 
 
         tvcsid = convertView.findViewById(R.id.customerId);
-        tvcsname = convertView.findViewById(R.id.customerName);
-        tvcsnumber = convertView.findViewById(R.id.customerNumber);
+        tvfname = convertView.findViewById(R.id.customerfname);
+        tvlname = convertView.findViewById(R.id.customerLName);
         tvcsemail = convertView.findViewById(R.id.customerEmail);
         tvcsaddress = convertView.findViewById(R.id.customerAddress);
         tvcscity = convertView.findViewById(R.id.customerCity);
@@ -99,8 +89,8 @@ SQLiteDatabase mdatabase;
 
 
         tvcsid.setText(customerId);
-        tvcsname.setText( customerName);
-        tvcsnumber.setText(customerNumber);
+        tvfname.setText( customerfName);
+        tvlname.setText(customerlname);
         tvcsemail.setText(customerEmail);
         tvcsaddress.setText(customerAddress);
         tvcscity.setText(customerCity);
@@ -115,7 +105,6 @@ SQLiteDatabase mdatabase;
         deleteOrderbtn = convertView.findViewById(R.id.deleteOrder);
 
 
-        deleteOrderbtn.setText("Delete Order");
 
 
 
