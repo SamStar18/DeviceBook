@@ -63,7 +63,7 @@
     <string name="csCountry2">Country:</string>
     <string name="csAddress">Address</string>
     <string name="csAddress2">Address Line:</string>
-    <string name="customerDetailsSummary">Customer Details</string>
+    <string name="customerDetailsSummary">Please review your details before you proceed</string>
     <string name="csEditButton">Edit</string>
     <string name="csBookingSummary">Booking Details</string>
     <string name="csdeviceType">Device</string>

@@ -27,8 +27,9 @@ public class displayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
+    //this bellow adds the back button
+         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        
         Button csConfirmButton = findViewById(R.id.csConfirmButton);
         Button editbutton1 = findViewById(R.id.csEditButton1);
         Button editbutton2 = findViewById(R.id.csEditButton2);
@@ -87,7 +88,11 @@ customerArray.add(csObject);
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent menuintent = new Intent(displayActivity.this,Product.class);
-
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
         startActivity(menuintent);
         return super.onOptionsItemSelected(item);
     }

@@ -3,6 +3,9 @@ package com.devicebook.devicebook;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -31,6 +34,8 @@ public class phone_avtivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_avtivity);
+        //this bellow adds the back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         deviceType = findViewById(R.id.deviceType);
         faultSpinner = findViewById(R.id.faultSpinner);
         deviceBrand = findViewById(R.id.deviceBrand);
@@ -232,6 +237,23 @@ public class phone_avtivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    public boolean  onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.devicebook_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent menuintent = new Intent(phone_avtivity.this,Product.class);
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        startActivity(menuintent);
+        return super.onOptionsItemSelected(item);
     }
 
     public void onContinueButtonPressed(View view) {

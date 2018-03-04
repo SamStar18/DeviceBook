@@ -28,7 +28,8 @@ public class LogOn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_on);
-
+//this bellow adds the back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         dbHelper = new mydbhandler(LogOn.this);
         mDatabase = dbHelper.getReadableDatabase();
 
@@ -47,7 +48,11 @@ public class LogOn extends AppCompatActivity {
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent menuintent = new Intent(LogOn.this,Product.class);
-
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
         startActivity(menuintent);
         return super.onOptionsItemSelected(item);
     }

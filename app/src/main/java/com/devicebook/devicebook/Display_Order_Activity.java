@@ -45,6 +45,9 @@ public class Display_Order_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.display_order_view);
+        //this bellow adds the back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         ListView display_order_listview;
         deleteButton = findViewById(R.id.deleteOrder);
 //add to database
@@ -80,7 +83,11 @@ String findName = LogIntent.getStringExtra("Name");
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent menuintent = new Intent(Display_Order_Activity.this,Product.class);
-
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
         startActivity(menuintent);
         return super.onOptionsItemSelected(item);
     }

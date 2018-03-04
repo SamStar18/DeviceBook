@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +21,8 @@ EditText alterEntry;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deleteandupdate);
+        //this bellow adds the back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         alterDelete = findViewById(R.id.alterDeleteButton);
 //add to database
         dbHelper = new mydbhandler(deleteandupdate.this);
@@ -25,6 +30,18 @@ EditText alterEntry;
 
         alterEntry= findViewById(R.id.alterEntry);
 
+    }
+    @Override
+    public boolean  onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.devicebook_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent menuintent = new Intent(deleteandupdate.this,Product.class);
+
+        startActivity(menuintent);
+        return super.onOptionsItemSelected(item);
     }
 
     public Boolean alterDelete(View view){

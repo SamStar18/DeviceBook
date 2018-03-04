@@ -3,6 +3,9 @@ package com.devicebook.devicebook;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -29,10 +32,8 @@ public class productanduserdetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productanduserdetails);
-
-
-
-
+//this bellow adds the back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         countrySpinner = findViewById(R.id.countrySpinner);
         fname = findViewById(R.id.fname);
         lname = findViewById(R.id.lname);
@@ -71,7 +72,22 @@ public class productanduserdetails extends AppCompatActivity {
 
 
     }
-
+    @Override
+    public boolean  onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.devicebook_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent menuintent = new Intent(productanduserdetails.this,Product.class);
+        switch (item.getItemId()) {
+        case android.R.id.home:
+        onBackPressed();
+            return true;
+        }
+        startActivity(menuintent);
+        return super.onOptionsItemSelected(item);
+    }
     public void padbuttonpressed (View view){
 
 

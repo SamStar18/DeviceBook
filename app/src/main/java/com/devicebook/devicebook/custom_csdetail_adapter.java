@@ -96,14 +96,14 @@ public class custom_csdetail_adapter extends ArrayAdapter<display_object_adapter
         final Button csDeletebtn2 = convertView.findViewById(R.id.csDeleteButton2);
         final Button csConfirmbtn = convertView.findViewById(R.id.csConfirmButton);
 
-        csId.setText("3435");
+
         tvfname.setText(fname);
         tvlname.setText(lname);
         tvemail.setText(email);
         tvaddress.setText(addressline1);
         tvcity.setText(city);
         tvcountry.setText(country);
-        csId.setText(String.valueOf(121));
+
 
 
         tvdevice.setText(csdevice);
