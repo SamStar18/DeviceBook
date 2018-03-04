@@ -95,7 +95,7 @@
     <string name="customerAddress">Address 1</string>
     <string name="customerCity">city</string>
     <string name="customerCountry">Country</string>
-    <string name="customerDeviceType">Devuce Type</string>
+    <string name="customerDeviceType">Device Type</string>
     <string name="customerBrandType">Brand</string>
     <string name="customerModelType">ModelType</string>
     <string name="customerFaultType">Fault</string>
@@ -105,7 +105,7 @@
     <string name="DeleteOrder">Alter Order</string>
     <string name="CustomerId">Customer Id</string>
     <string name="csId">Customer Id</string>
-    <string name="logOnSub">Please Enter your name</string>
+    <string name="logOnSub">Please Enter your first name </string>
     <string name="nameEntryB">Enter</string>
     <string name="nameEntryButton">Enter</string>
     <string name="altersub">Enter the ID of the table you would like to Alter</string>

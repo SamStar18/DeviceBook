@@ -61,6 +61,8 @@ public class LogOn extends AppCompatActivity {
         dbHelper.findCustomer(namechecker);
 
          if(dbHelper.checkcustomer(namechecker)) {
+
+
             Intent LogIntent = new Intent(LogOn.this, Display_Order_Activity.class);
 
             LogIntent.putExtra("Name", nameEntry.getText().toString().trim());

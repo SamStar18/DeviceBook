@@ -18,7 +18,7 @@ public class mydbhandler extends SQLiteOpenHelper {
 
     mydbhandler dbHelper;
 
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     private static final String DATABASE_NAME = "customerOrderDetails.db";
     private static final String TABLE_CUSTOMER = "customerTable";
     public static final String CustomerId_column = "Id";
@@ -45,10 +45,11 @@ public class mydbhandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         String query = "CREATE TABLE " +
                 TABLE_CUSTOMER + "("
                 + CustomerId_column + " INTEGER PRIMARY KEY, " +
-                CustomerfName_column + " TEXT, " +
+                CustomerfName_column + " TEXT COLLATE NOCASE, " +
                 lastname_column + " TEXT, " +
                 CustomerEmail_column + " TEXT, " +
                 CustomerAddress_column + " TEXT, " +
@@ -107,7 +108,17 @@ public class mydbhandler extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String selection = CustomerfName_column + " = ?";
+
+
+
+
+
+
+
+        String sortOrder = CustomerfName_column + "   ASC ";
+
+
+        String selection = CustomerfName_column +  " = ?";
 
         String[] selectionArgs = {name};
         String[] columns = {
@@ -126,21 +137,14 @@ public class mydbhandler extends SQLiteOpenHelper {
                 customerRecieve_column
         };
         // sorting orders
-        String sortOrder = CustomerfName_column + " ASC";
+
+
+        Cursor cursor = db.query(TABLE_CUSTOMER, columns, selection, selectionArgs, null, null, sortOrder);
 
         List<display_order_method> customerList = new ArrayList<display_order_method>();
 
+        if (cursor.moveToFirst()){
 
-        Cursor cursor = db.query(TABLE_CUSTOMER, //Table to query
-                columns,    //columns to return
-                selection,        //columns for the WHERE clause
-                selectionArgs,        //The values for the WHERE clause
-                null,       //group the rows
-                null,       //filter by row groups
-                sortOrder); //The sort order
-
-
-        if (cursor.moveToFirst()) {
             do {
                 display_order_method customer = new display_order_method();
                 customer.setMyCustomerId(cursor.getString(cursor.getColumnIndex(CustomerId_column)));
