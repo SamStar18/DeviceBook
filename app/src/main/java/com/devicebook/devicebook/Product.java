@@ -40,22 +40,24 @@ String listcaption;
 
 
         String deviceselection = adapterView.getItemAtPosition(0).toString();
+        String otherservices = adapterView.getItemAtPosition(1).toString();
         String orderDisplay = adapterView.getItemAtPosition(2).toString();
+        String Aboutdevicebook = adapterView.getItemAtPosition(3).toString();
 
 
                 if(phonecaptionlists[i]  == deviceselection){
                     startActivity(new Intent(Product.this,phone_avtivity.class));
                 }
 
+                if(phonecaptionlists[i] == otherservices){
+                    Toast.makeText(Product.this,"Stay tuned: Coming soon  " ,Toast.LENGTH_SHORT).show();
+                }
                 if(phonecaptionlists[i] == orderDisplay){
-
-
-
-
-
                     startActivity(new Intent (Product.this,LogOn.class));
                 }
-
+                if(phonecaptionlists[i] == Aboutdevicebook){
+                    Toast.makeText(Product.this,"Stay tuned: Coming soon  " ,Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
