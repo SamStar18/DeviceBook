@@ -74,7 +74,7 @@ public class phone_avtivity extends AppCompatActivity {
         Collections.addAll(sonyArray,  "Sony XY", "Sony XZ", "Sony Z4", "Sony Z3", "Sony Z2", "Sony Z");
 
         ArrayList<String> colorArray = new ArrayList<>();
-        Collections.addAll(colorArray, "", "Red", "Black", "White", "Grey", "Rose Gold", "Grey");
+        Collections.addAll(colorArray, "", "Red", "Black", "White", "Grey", "Rose Gold");
         Collections.sort(colorArray);
 
 

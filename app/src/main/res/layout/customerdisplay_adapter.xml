@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:descendantFocusability="beforeDescendants">
+    android:descendantFocusability="beforeDescendants"
+    android:adjustViewBounds="true">
 
 
     <TextView
@@ -13,7 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
         android:text="@string/customerDetailsSummary"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
@@ -449,7 +451,6 @@
         android:id="@+id/csConfirmButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="27dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/buttonshape2"
         android:text="@string/csContinueButton"

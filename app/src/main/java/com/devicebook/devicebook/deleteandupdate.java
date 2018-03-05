@@ -58,8 +58,8 @@ EditText alterEntry;
             dbHelper.deletecustomer(entry);
 
             Toast.makeText(deleteandupdate.this, "Table Deleted ", Toast.LENGTH_SHORT).show();
-            //Intent returntodatabase = new Intent(deleteandupdate.this,Display_Order_Activity.class);
-           // startActivity(returntodatabase);
+            Intent returntodatabase = new Intent(deleteandupdate.this,Product.class);
+            startActivity(returntodatabase);
 
         }
 
