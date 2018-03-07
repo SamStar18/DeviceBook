@@ -4,7 +4,7 @@
     <!--<item android:drawable="@drawable/checkedmark" android:state_checked="true"/>-->
     <!-- <item android:drawable="@drawable/uncheckedmark" android:state_checked="false"/>-->
      <item android:drawable="@color/colorPrimary" android:state_checked="true" />
-     <item android:drawable="@color/grey" android:state_checked="false"
+     <item android:drawable="@color/text_color_primary" android:state_checked="false"
          />
 
 

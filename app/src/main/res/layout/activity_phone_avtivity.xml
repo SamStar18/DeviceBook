@@ -38,18 +38,18 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:text="@string/modelSubtitle"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deviceType" />
+        app:layout_constraintTop_toBottomOf="@+id/deviceBrand" />
 
     <Spinner
         android:id="@+id/deviceModel"
         android:layout_width="0dp"
         android:layout_height="37dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:background="@android:color/darker_gray"
         android:padding="8dp"
         android:textAlignment="center"
@@ -65,18 +65,18 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:text="@string/makeSubtitle"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deviceModel" />
+        app:layout_constraintTop_toBottomOf="@+id/deviceType" />
 
     <Spinner
         android:id="@+id/deviceBrand"
         android:layout_width="0dp"
         android:layout_height="37dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:background="@android:color/darker_gray"
         android:padding="8dp"
         android:textAlignment="center"
@@ -92,19 +92,19 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:text="@string/faultSubtitle"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.463"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deviceBrand" />
+        app:layout_constraintTop_toBottomOf="@+id/deviceModel" />
 
     <Spinner
         android:id="@+id/faultSpinner"
         android:layout_width="0dp"
         android:layout_height="37dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:background="@android:color/darker_gray"
         android:textAlignment="center"
         android:textSize="14sp"
@@ -119,7 +119,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:text="@string/deviceColorSubtitle"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -131,7 +131,7 @@
         android:id="@+id/mycolorSpinner"
         android:layout_width="0dp"
         android:layout_height="37dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:background="@android:color/darker_gray"
         android:textAlignment="center"
         android:textSize="14sp"
@@ -172,11 +172,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+
+            android:buttonTint="@drawable/radioselector2"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:text="@string/pickUpOption"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@drawable/radioselector2"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -185,11 +187,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:buttonTint="@drawable/radioselector2"
             android:paddingLeft="5dp"
+
             android:paddingRight="5dp"
             android:text="@string/postOption"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@drawable/radioselector2"
             android:textSize="18sp"
             android:textStyle="bold" />
     </RadioGroup>

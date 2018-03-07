@@ -50,7 +50,7 @@
     <string name="csNameSummary">Name</string>
     <string name="csName">Name   </string>
 
-    <string name="csNumber">Number </string>
+    <string name="csNumber">Last Name: </string>
     <string name="csEmail">Email  </string>
 
     <string name="csCity">City   </string>
@@ -90,7 +90,7 @@
     <string name="personalIntro">Your personal details are</string>
     <string name="introBooking">Thank you for booking with DeviceBook</string>
     <string name="customerName">First Name</string>
-    <string name="customerNumber">Number</string>
+    <string name="customerNumber">Last Name</string>
     <string name="customerEmail">Email</string>
     <string name="customerAddress">Address 1</string>
     <string name="customerCity">city</string>

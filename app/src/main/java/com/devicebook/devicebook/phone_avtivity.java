@@ -28,6 +28,8 @@ public class phone_avtivity extends AppCompatActivity {
     private Button continueButton;
     String collectionradio;
     String colorchoice;
+    RadioButton postOption;
+    RadioButton pickupOption;
 
     // this is used to call the arrays in the string list
     @Override
@@ -43,6 +45,9 @@ public class phone_avtivity extends AppCompatActivity {
         mycolorSpinner = findViewById(R.id.mycolorSpinner);
         mycollectionOptions = findViewById(R.id.mycollectionOptions);
         continueButton = findViewById(R.id.continueButton);
+
+        postOption = findViewById(R.id.postOption);
+        pickupOption = findViewById(R.id.pickUpOption);
 
 
 
