@@ -42,8 +42,8 @@ public class displayActivity extends AppCompatActivity {
 
        String csid = "id";
 
-        String  csfname = csdetailsintent.getStringExtra("csfname");
-        String cslname = csdetailsintent.getStringExtra("cslname");
+        String  csusername = csdetailsintent.getStringExtra("csusername");
+        String csfullname = csdetailsintent.getStringExtra("csfullname");
         String csemail = csdetailsintent.getStringExtra("csemail");
         String csaddress = csdetailsintent.getStringExtra("csaddress");
         String cscity = csdetailsintent.getStringExtra("cscity");
@@ -65,7 +65,7 @@ public class displayActivity extends AppCompatActivity {
 
 
 
-        display_object_adapter csObject = new display_object_adapter(csid,csfname,cslname,csemail,csaddress,cscity,cscountry,editbutton1,csDeleteButton1,csdeviceType,csbrand,csmodel,csfault,cscolor,cscollection,editbutton2,csDeleteButton2,csConfirmButton);
+        display_object_adapter csObject = new display_object_adapter(csid,csusername,csfullname,csemail,csaddress,cscity,cscountry,editbutton1,csDeleteButton1,csdeviceType,csbrand,csmodel,csfault,cscolor,cscollection,editbutton2,csDeleteButton2,csConfirmButton);
 
 
         ArrayList<display_object_adapter> customerArray = new ArrayList<>();

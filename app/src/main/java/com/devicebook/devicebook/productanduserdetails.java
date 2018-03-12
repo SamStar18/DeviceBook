@@ -1,6 +1,7 @@
 package com.devicebook.devicebook;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -20,13 +21,13 @@ import java.util.Locale;
 public class productanduserdetails extends AppCompatActivity {
 
     private Spinner countrySpinner;
-    private EditText fname;
-    private EditText lname;
+    private EditText username;
+    private EditText fullname;
     private EditText address1;
     private EditText city;
     private EditText email;
-
-
+    SQLiteDatabase mDatabase;
+    private mydbhandler dbHelper = new mydbhandler(productanduserdetails.this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +36,8 @@ public class productanduserdetails extends AppCompatActivity {
 //this bellow adds the back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         countrySpinner = findViewById(R.id.countrySpinner);
-        fname = findViewById(R.id.fname);
-        lname = findViewById(R.id.lname);
+        username = findViewById(R.id.username);
+       fullname = findViewById(R.id.fullname);
         address1 = findViewById(R.id.address1);
         city = findViewById(R.id.city);
         email = findViewById(R.id.email);
@@ -90,16 +91,27 @@ public class productanduserdetails extends AppCompatActivity {
     }
     public void padbuttonpressed (View view){
 
-
+        String Username = username.getText().toString();
+        dbHelper.getWritableDatabase();
+        dbHelper.findCustomer(Username);
 
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
-        if(fname.getText().toString().contentEquals("")){
+        if(username.getText().toString().contentEquals("")){
            Toast.makeText(productanduserdetails.this,"Please Enter your Full Name " , Toast.LENGTH_SHORT).show();
             return;
         }
-        else if(lname.getText().toString().contentEquals("")){
-            Toast.makeText(productanduserdetails.this,"Please Enter your Mobile Number " , Toast.LENGTH_SHORT).show();
+
+
+
+        if(dbHelper.checkusername(Username)) {
+            Toast.makeText(productanduserdetails.this,"User already exists" +
+                    " " , Toast.LENGTH_SHORT).show();
+            emptynametext();
+            return;
+        }
+        else if(fullname.getText().toString().contentEquals("")){
+            Toast.makeText(productanduserdetails.this,"Please Enter your fullname " , Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -138,8 +150,8 @@ public class productanduserdetails extends AppCompatActivity {
 
             Intent csdetailsintent = new Intent(getApplicationContext(),displayActivity.class);
 
-            csdetailsintent.putExtra("csfname",fname.getText().toString());
-            csdetailsintent.putExtra("cslname",lname.getText().toString());
+            csdetailsintent.putExtra("csusername",username.getText().toString());
+            csdetailsintent.putExtra("csfullname",fullname.getText().toString());
             csdetailsintent.putExtra("csemail",email.getText().toString());
             csdetailsintent.putExtra("csaddress",address1.getText().toString());
             csdetailsintent.putExtra("cscity",city.getText().toString());
@@ -158,5 +170,16 @@ public class productanduserdetails extends AppCompatActivity {
             startActivity(csdetailsintent);
 
         }
+        return;
+    }
+    private void emptynametext() {
+        username.setText(null);
+        dbHelper = new mydbhandler(productanduserdetails.this);
+        String empty = "";
+
+
+        //if (nameEntry.getText().toString().contentEquals(csname)) {
+
+
     }
 }

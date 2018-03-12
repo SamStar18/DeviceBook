@@ -9,8 +9,8 @@ import java.util.ArrayList;
 public class display_order_method extends ArrayList<display_order_method> {
 
     private String myCustomerId;
-    private String myCustomerfName;
-    private String myCustomerlname;
+    private String myCustomerUsername;
+    private String myCustomerfullname;
     private String myCustomerEmail;
     private String myCustomerAddress;
     private String myCustomerCity;
@@ -27,10 +27,10 @@ public class display_order_method extends ArrayList<display_order_method> {
     }
 
 
-    public display_order_method(String mycustomerId, String myCustomerfName, String myCustomerlname, String myCustomerEmail, String myCustomerAddress, String myCustomerCity, String myCustomerCountry, String mycustomerDevice, String mycustomerBrand, String mycustomerModel, String mycustomerFault, String mycustomerColor, String mycustomerRecieve) {
+    public display_order_method(String mycustomerId, String myCustomerUsername, String myCustomerfullname, String myCustomerEmail, String myCustomerAddress, String myCustomerCity, String myCustomerCountry, String mycustomerDevice, String mycustomerBrand, String mycustomerModel, String mycustomerFault, String mycustomerColor, String mycustomerRecieve) {
         myCustomerId = mycustomerId;
-        this.myCustomerfName = myCustomerfName;
-        this.myCustomerlname = myCustomerlname;
+        this.myCustomerUsername = myCustomerUsername;
+        this.myCustomerfullname = myCustomerfullname;
         this.myCustomerEmail = myCustomerEmail;
         this.myCustomerAddress = myCustomerAddress;
         this.myCustomerCity = myCustomerCity;
@@ -43,11 +43,11 @@ public class display_order_method extends ArrayList<display_order_method> {
         this.mycustomerRecieve = mycustomerRecieve;
     }
 
-    public display_order_method( String myCustomerfName, String myCustomerlname, String myCustomerEmail, String myCustomerAddress, String myCustomerCity, String myCustomerCountry, String mycustomerDevice, String mycustomerBrand, String mycustomerModel, String mycustomerFault, String mycustomerColor, String mycustomerRecieve) {
+    public display_order_method( String myCustomerUsername, String myCustomerfullname, String myCustomerEmail, String myCustomerAddress, String myCustomerCity, String myCustomerCountry, String mycustomerDevice, String mycustomerBrand, String mycustomerModel, String mycustomerFault, String mycustomerColor, String mycustomerRecieve) {
 
 
-        this.myCustomerfName = myCustomerfName;
-        this.myCustomerlname = myCustomerlname;
+        this.myCustomerUsername = myCustomerUsername;
+        this.myCustomerfullname = myCustomerfullname;
         this.myCustomerEmail = myCustomerEmail;
         this.myCustomerAddress = myCustomerAddress;
         this.myCustomerCity = myCustomerCity;
@@ -68,20 +68,20 @@ public class display_order_method extends ArrayList<display_order_method> {
         this.myCustomerId = myCustomerId;
     }
 
-    public String getMyCustomerfName() {
-        return myCustomerfName;
+    public String getMyCustomerUsername() {
+        return myCustomerUsername;
     }
 
-    public void setMyCustomerfName(String myCustomerfName) {
-        this.myCustomerfName = myCustomerfName;
+    public void setMyCustomerUsername(String myCustomerUsername) {
+        this.myCustomerUsername = myCustomerUsername;
     }
 
-    public String getMyCustomerlname() {
-        return myCustomerlname;
+    public String getMyCustomerfullname() {
+        return myCustomerfullname;
     }
 
-    public void setMyCustomerlname(String myCustomerlname) {
-        this.myCustomerlname = myCustomerlname;
+    public void setMyCustomerfullname(String myCustomerfullname) {
+        this.myCustomerfullname = myCustomerfullname;
     }
 
     public String getMyCustomerEmail() {

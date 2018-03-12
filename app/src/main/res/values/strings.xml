@@ -28,7 +28,7 @@
     <string name="tabletBrand">Tablet Brand</string>
     <string name="tabletOperaringSystem">Tablet Operating System</string>
     <string name="customerDetailsSubtitle">Customer Details</string>
-    <string name="nameSubtitle">Customer\'s First Name</string>
+    <string name="nameSubtitle">Username: *Required to check orders</string>
     <string name="nameHint">Enter your name</string>
     <string name="mobileDetails">Customer\'s Last Name</string>
     <string name="mobileHint">Enter contact number</string>
@@ -48,9 +48,9 @@
     <string name="devicetTypeSummary">Device Type</string>
     <string name="csDeviceType">Device</string>
     <string name="csNameSummary">Name</string>
-    <string name="csName">Name   </string>
+    <string name="csName">Username   </string>
 
-    <string name="csNumber">Last Name: </string>
+    <string name="csNumber">Fullname: </string>
     <string name="csEmail">Email  </string>
 
     <string name="csCity">City   </string>
@@ -105,19 +105,19 @@
     <string name="DeleteOrder">Alter Order</string>
     <string name="CustomerId">Customer Id</string>
     <string name="csId">Customer Id</string>
-    <string name="logOnSub">Please Enter your first name </string>
+    <string name="logOnSub">Please Enter your Username </string>
     <string name="nameEntryB">Enter</string>
     <string name="nameEntryButton">Enter</string>
     <string name="altersub">Enter the ID of the table you would like to Alter</string>
     <string name="alterEntry">Enter Name</string>
     <string name="alterDeleteButton">Delete</string>
-    <string name="fname">Enter First Name</string>
-    <string name="lname">Enter Last Name</string>
+    <string name="fname">Enter Username</string>
+    <string name="lname">Enter Full Name</string>
     <string name="customerlName">Last Name</string>
     <string name="csidsub">Customer Id</string>
     <string name="csaddresssub">Address</string>
-    <string name="fnamesub">First Name</string>
-    <string name="lnamesub">Last Name</string>
+    <string name="fnamesub">Username</string>
+    <string name="lnamesub">Fullname</string>
     <string name="emailsub">Email</string>
     <string name="devicesub">Device Type</string>
     <string name="brandsub">Brand</string>
@@ -126,6 +126,11 @@
     <string name="colorsub">Color</string>
     <string name="collectionsub">Collection Option</string>
     <string name="NameEntry">Name</string>
+    <string name="fullnamesub">Customer\'s Full Name</string>
+    <string name="usernamesub">Username</string>
+    <string name="csfullname">Full Name</string>
+    <string name="customerFullName">Full Name</string>
+    <string name="customerusername">Username</string>
 
 
     <string-array name="phoneMakes">

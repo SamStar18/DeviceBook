@@ -37,24 +37,24 @@
         app:layout_constraintTop_toBottomOf="@+id/introBooking" />
 
     <TextView
-        android:id="@+id/customerfname"
+        android:id="@+id/customerusername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
-        android:text="@string/customerName"
+        android:text="@string/customerusername"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerId" />
 
     <TextView
-        android:id="@+id/customerLName"
+        android:id="@+id/customerfullname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
-        android:text="@string/customerlName"
+        android:text="@string/customerFullName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customerfname" />
+        app:layout_constraintTop_toBottomOf="@+id/customerusername" />
 
     <TextView
         android:id="@+id/customerEmail"
@@ -64,7 +64,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/customerEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customerLName" />
+        app:layout_constraintTop_toBottomOf="@+id/customerfullname" />
 
     <TextView
         android:id="@+id/customerAddress"
@@ -76,7 +76,7 @@
         android:text="@string/customerAddress"
         android:textAlignment="viewEnd"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/csaddresssub"
         app:layout_constraintTop_toBottomOf="@+id/customerEmail" />
 
@@ -89,7 +89,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/customerCity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.985"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerAddress" />
 
@@ -102,7 +102,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/customerCountry"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.984"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerCity" />
 
@@ -230,9 +230,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:text="@string/csidsub"
-        app:layout_constraintBottom_toTopOf="@+id/customerfname"
+        app:layout_constraintBottom_toTopOf="@+id/customerusername"
         app:layout_constraintEnd_toStartOf="@+id/customerId"
-        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/personalIntro"
         app:layout_constraintVertical_bias="0.25" />
@@ -255,8 +255,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/fnamesub"
-        app:layout_constraintEnd_toStartOf="@+id/customerfname"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintEnd_toStartOf="@+id/customerusername"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csidsub" />
 
@@ -268,8 +268,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/lnamesub"
-        app:layout_constraintEnd_toStartOf="@+id/customerLName"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintEnd_toStartOf="@+id/customerfullname"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fnamesub" />
 
@@ -282,7 +282,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/emailsub"
         app:layout_constraintEnd_toStartOf="@+id/customerEmail"
-        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lnamesub" />
 
@@ -291,11 +291,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
         android:text="@string/devicesub"
         app:layout_constraintEnd_toStartOf="@+id/customerDevice"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/orderIntro2" />
 
@@ -304,11 +304,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/brandsub"
         app:layout_constraintEnd_toStartOf="@+id/customerBrand"
-        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/devicesub" />
 
@@ -317,11 +317,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/faultsub"
         app:layout_constraintEnd_toStartOf="@+id/customerFault"
-        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/modelsub" />
 
@@ -330,11 +330,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/colorsub"
         app:layout_constraintEnd_toStartOf="@+id/customerColor"
-        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/faultsub" />
 
@@ -343,11 +343,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/modelsub"
         app:layout_constraintEnd_toStartOf="@+id/customerModel"
-        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/brandsub" />
 
@@ -356,11 +356,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/collectionsub"
         app:layout_constraintEnd_toStartOf="@+id/customerRecieve"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/colorsub" />
 </android.support.constraint.ConstraintLayout>

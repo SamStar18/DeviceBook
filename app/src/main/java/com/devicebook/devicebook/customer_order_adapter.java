@@ -25,8 +25,8 @@ SQLiteDatabase mdatabase;
     ArrayList<display_order_method> customerlist;
 
     TextView tvcsid;
-    TextView tvfname;
-    TextView tvlname;
+    TextView tvcustomerusername;
+    TextView tvcustomerfullname;
     TextView tvcsemail;
     TextView tvcsaddress;
     TextView tvcscity;
@@ -56,8 +56,8 @@ SQLiteDatabase mdatabase;
         convertView = myinflater.inflate(csresource, parent, false);
 
         String customerId = getItem(position).getMyCustomerId();
-        String customerfName = getItem(position).getMyCustomerfName();
-        String customerlname = getItem(position).getMyCustomerlname();
+        String customerusername = getItem(position).getMyCustomerUsername();
+        String customerfullname = getItem(position).getMyCustomerfullname();
         String customerEmail = getItem(position).getMyCustomerEmail();
         String customerAddress = getItem(position).getMyCustomerAddress();
         String customerCity = getItem(position).getMyCustomerCity();
@@ -73,8 +73,8 @@ SQLiteDatabase mdatabase;
 
 
         tvcsid = convertView.findViewById(R.id.customerId);
-        tvfname = convertView.findViewById(R.id.customerfname);
-        tvlname = convertView.findViewById(R.id.customerLName);
+        tvcustomerusername = convertView.findViewById(R.id.customerusername);
+        tvcustomerfullname = convertView.findViewById(R.id.customerfullname);
         tvcsemail = convertView.findViewById(R.id.customerEmail);
         tvcsaddress = convertView.findViewById(R.id.customerAddress);
         tvcscity = convertView.findViewById(R.id.customerCity);
@@ -89,8 +89,8 @@ SQLiteDatabase mdatabase;
 
 
         tvcsid.setText(customerId);
-        tvfname.setText( customerfName);
-        tvlname.setText(customerlname);
+        tvcustomerusername.setText( customerusername);
+        tvcustomerfullname.setText(customerfullname);
         tvcsemail.setText(customerEmail);
         tvcsaddress.setText(customerAddress);
         tvcscity.setText(customerCity);

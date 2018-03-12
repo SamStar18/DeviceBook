@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/csfname"
+        android:id="@+id/csusername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -35,7 +35,7 @@
         android:hint="@string/csName"
         android:imeOptions="actionNext"
         android:inputType="text"
-        android:nextFocusDown="@+id/cslname"
+        android:nextFocusDown="@+id/csfullname"
         android:textAlignment="textEnd"
         android:textColor="@color/colorPrimary"
         android:textSize="14sp"
@@ -44,7 +44,7 @@
 
 
     <EditText
-        android:id="@+id/cslname"
+        android:id="@+id/csfullname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -61,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/csfnamehint"
-        app:layout_constraintTop_toBottomOf="@+id/csfname" />
+        app:layout_constraintTop_toBottomOf="@+id/csusername" />
 
     <EditText
         android:id="@+id/csEmail"
@@ -80,7 +80,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.983"
         app:layout_constraintStart_toEndOf="@+id/csEmail2"
-        app:layout_constraintTop_toBottomOf="@+id/cslname" />
+        app:layout_constraintTop_toBottomOf="@+id/csfullname" />
 
     <EditText
         android:id="@+id/csAddress"
@@ -143,8 +143,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
-        android:text="@string/csName2"
-        app:layout_constraintEnd_toStartOf="@+id/csfname"
+        android:text="@string/usernamesub"
+        app:layout_constraintEnd_toStartOf="@+id/csusername"
         app:layout_constraintHorizontal_bias="0.018"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customerDetailsSummary" />
@@ -155,7 +155,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
-        android:text="@string/csPhoneNumber2"
+        android:text="@string/csfullname"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/csName2" />
 

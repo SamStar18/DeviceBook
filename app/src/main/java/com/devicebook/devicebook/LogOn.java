@@ -76,6 +76,16 @@ public class LogOn extends AppCompatActivity {
 
         }
 
+        else if(nameEntry.getText().toString().isEmpty()){
+             Toast.makeText(LogOn.this,"Field is empty" , Toast.LENGTH_SHORT).show();
+             return false;
+        }
+
+        else{
+             Toast.makeText(LogOn.this,"Username not recognised " , Toast.LENGTH_SHORT).show();
+                     return false;
+         }
+
 
 
 

@@ -76,8 +76,8 @@ public class mydbhandler extends SQLiteOpenHelper {
     public void addcustomer(display_order_method customer) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(CustomerfName_column, customer.getMyCustomerfName());
-        values.put(lastname_column, customer.getMyCustomerlname());
+        values.put(CustomerfName_column, customer.getMyCustomerUsername());
+        values.put(lastname_column, customer.getMyCustomerfullname());
         values.put(CustomerEmail_column, customer.getMyCustomerEmail());
         values.put(CustomerAddress_column, customer.getMyCustomerAddress());
         values.put(CustomerCity_column, customer.getMyCustomerCity());
@@ -148,8 +148,8 @@ public class mydbhandler extends SQLiteOpenHelper {
             do {
                 display_order_method customer = new display_order_method();
                 customer.setMyCustomerId(cursor.getString(cursor.getColumnIndex(CustomerId_column)));
-                customer.setMyCustomerfName(cursor.getString(cursor.getColumnIndex(CustomerfName_column)));
-                customer.setMyCustomerlname(cursor.getString(cursor.getColumnIndex(lastname_column)));
+                customer.setMyCustomerUsername(cursor.getString(cursor.getColumnIndex(CustomerfName_column)));
+                customer.setMyCustomerfullname(cursor.getString(cursor.getColumnIndex(lastname_column)));
                 customer.setMyCustomerEmail(cursor.getString(cursor.getColumnIndex(CustomerEmail_column)));
                 customer.setMyCustomerAddress(cursor.getString(cursor.getColumnIndex(CustomerAddress_column)));
                 customer.setMyCustomerCity(cursor.getString(cursor.getColumnIndex(CustomerCity_column)));
@@ -194,7 +194,7 @@ public class mydbhandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 display_order_method customer = new display_order_method();
-                customer.setMyCustomerlname(cursor.getString(cursor.getColumnIndex(CustomerfName_column)));
+                customer.setMyCustomerUsername(cursor.getString(cursor.getColumnIndex(CustomerfName_column)));
 
                 checklist.add(customer);
             } while (cursor.moveToNext());
@@ -205,7 +205,7 @@ public class mydbhandler extends SQLiteOpenHelper {
         db.close();
 
         if (cursorCount < 1) {
-            Toast.makeText(cscontext, "Double check entry ", Toast.LENGTH_SHORT).show();
+
             return false;
 
         }
@@ -215,6 +215,51 @@ public class mydbhandler extends SQLiteOpenHelper {
 
 
 
+
+        return true;
+    }
+
+
+
+    public Boolean checkusername(String name){
+        List<display_order_method> checklist = new ArrayList<display_order_method>();
+        String[] columns = {CustomerfName_column};
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String selection = CustomerfName_column + " = ?";
+
+        String[] selectionArgs = {name};
+
+        Cursor cursor = db.query(TABLE_CUSTOMER, //Table to query
+                columns,                    //columns to return
+                selection,                  //columns for the WHERE clause
+                selectionArgs,              //The values for the WHERE clause
+                null,                       //group the rows
+                null,                      //filter by row groups
+                null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                display_order_method customer = new display_order_method();
+                customer.setMyCustomerUsername(cursor.getString(cursor.getColumnIndex(CustomerfName_column)));
+
+                checklist.add(customer);
+            } while (cursor.moveToNext());
+        }
+        //The sort order
+        int cursorCount = cursor.getCount();
+        cursor.close();
+        db.close();
+
+
+        if (cursorCount < 1) {
+
+            return false;
+
+        }
+        else{
+
+        }
 
         return true;
     }

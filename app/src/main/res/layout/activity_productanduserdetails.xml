@@ -21,9 +21,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/fname"
+        android:id="@+id/username"
         android:layout_width="0dp"
-        android:layout_height="37dp"
+        android:layout_height="33dp"
         android:layout_marginTop="10dp"
         android:background="@android:color/darker_gray"
         android:hint="@string/fname"
@@ -44,14 +44,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
-        android:text="@string/mobileDetails"
+        android:text="@string/fullnamesub"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fname" />
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <EditText
-        android:id="@+id/lname"
+        android:id="@+id/fullname"
         android:layout_width="0dp"
         android:layout_height="37dp"
         android:layout_marginTop="10dp"
@@ -89,7 +89,7 @@
         android:text="@string/emailSubtitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lname" />
+        app:layout_constraintTop_toBottomOf="@+id/fullname" />
 
     <EditText
         android:id="@+id/email"

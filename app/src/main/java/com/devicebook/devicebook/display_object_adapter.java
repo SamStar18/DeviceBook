@@ -8,8 +8,8 @@ import android.widget.Button;
 
 public class display_object_adapter {
     private String csid;
-   private String fname;
-    private String lname;
+   private String username;
+    private String fullname;
     private String email;
     private String addressline1;
     private String city;
@@ -29,10 +29,10 @@ public class display_object_adapter {
     private Button csConfirmButton;
 
 
-    public display_object_adapter(String csid,String fname, String lname, String email, String addressline1, String city, String country, Button editbutton1,Button csDeleteButton1, String csdeviceType,String csdeviceBrand, String csdeviceModel,  String csfaultspinner, String cscolorspinner, String csCollectionOptions, Button editbutton2,Button csDeleteButton2,Button csConfirmButton) {
+    public display_object_adapter(String csid,String username, String fullname, String email, String addressline1, String city, String country, Button editbutton1,Button csDeleteButton1, String csdeviceType,String csdeviceBrand, String csdeviceModel,  String csfaultspinner, String cscolorspinner, String csCollectionOptions, Button editbutton2,Button csDeleteButton2,Button csConfirmButton) {
         this.csid = csid;
-        this.fname = fname;
-        this.lname = lname;
+        this.username = username;
+        this.fullname = fullname;
         this.email = email;
         this.addressline1 = addressline1;
         this.city = city;
@@ -59,20 +59,20 @@ public class display_object_adapter {
         this.csid = csid;
     }
 
-    public String getFname() {
-        return fname;
+    public String getUsername() {
+        return username;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getLname() {
-        return lname;
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
     public String getEmail() {
