@@ -104,7 +104,7 @@
     <!-- TODO: Remove or change this placeholder text -->
 
     <string name="adminpanelsub">Admin Panel</string>
-    <string name="entrysub">Enter details below</string>
+    <string name="entrysub">Admin: Please Login to proceed </string>
     <string name="adminusername">Username</string>
     <string name="adminpassword">Password</string>
     <string name="adminenter">Login</string>
@@ -118,5 +118,7 @@
     <string name="totalOsub">Total Orders</string>
     <string name="searchSub">Search</string>
     <string name="input_search">Enter Address or City</string>
+    <string name="customerpanelsub">Customer Panel</string>
+    <string name="checkAdmin">Remember Me</string>
 
 </resources>

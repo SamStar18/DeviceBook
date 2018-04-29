@@ -1,6 +1,7 @@
 package com.devicebook.devicebook.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -17,9 +19,12 @@ import com.devicebook.devicebook.R;
 public class AdminLogIn extends AppCompatActivity {
     SQLiteDatabase mDatabase;
     private AdminDatabase dbHelper;
-
     EditText adminusername;
     EditText adminpassword;
+    CheckBox checkAdmin;
+    static String PREFSNAME = "mypref";
+    public static String PREF_USERNAME="";
+    public static String PREF_PASSWORD="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,10 +32,26 @@ public class AdminLogIn extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         dbHelper = new AdminDatabase(AdminLogIn.this);
-        mDatabase = dbHelper.getReadableDatabase();
+       mDatabase = dbHelper.getReadableDatabase();
 
         adminusername = findViewById( R.id.adminusername);
         adminpassword = findViewById(R.id.adminpassword);
+        checkAdmin  = findViewById(R.id.chckadmin);
+
+        SharedPreferences myPrefs = this.getSharedPreferences("myPrefs", MODE_PRIVATE);
+        boolean isRemember = myPrefs.getBoolean("REMEMBER", false);
+        if(!isRemember){
+checkAdmin.setChecked(false);
+        }
+else
+        {
+            String user = myPrefs.getString("LOGIN_USER", "");
+            String pswd = myPrefs.getString("LOGIN_PSWD", "");
+        checkAdmin.setChecked(true);
+            adminusername.setText(user);
+            adminpassword.setText(pswd);
+
+        }
     }
     @Override
     public boolean  onCreateOptionsMenu(Menu menu) {
@@ -52,29 +73,31 @@ public class AdminLogIn extends AppCompatActivity {
 
     public boolean adminloginbutton(View view) {
 
-        String usernamechecker = "admin";
-        String passwordchecker = "Password";
+        String musername  = adminusername.getText().toString();
+        String mpassword  = adminpassword.getText().toString();
 
-        //String musername  = adminusername.getText().toString();
-        //String mpassword  = adminpassword.getText().toString();
-        //String usernamechecker = String.valueOf(dbHelper.checkAdmin(musername));
-        //String passwordchecker = String.valueOf(dbHelper.checkPassword(mpassword));
+       boolean adminchecker = dbHelper.checkAdmin(musername, mpassword);
 
-        if(adminusername.getText().toString().contentEquals(usernamechecker) && adminpassword.getText().toString().contentEquals(passwordchecker)) {
+       if(adminchecker == true) {
+
+            SharedPreferences myPrefs = this.getSharedPreferences("myPrefs", MODE_PRIVATE);
+            SharedPreferences.Editor prefsEditor = myPrefs.edit();
+            prefsEditor.putString("LOGIN_USER", adminusername.getText().toString());
+            prefsEditor.putString("LOGIN_PSWD", adminpassword.getText().toString());
+            prefsEditor.putBoolean("REMEMBER", checkAdmin.isChecked());
+            prefsEditor.apply();
+
             Intent LogIntent = new Intent(AdminLogIn.this, AdminActivity.class);
 
             emptynametext();
             startActivity(LogIntent);
         }
-        else if(adminusername.getText().toString().isEmpty() || adminpassword.getText().toString().isEmpty()){
+        else if(musername.isEmpty() || mpassword.isEmpty()){
             Toast.makeText(AdminLogIn.this,"Field is empty" , Toast.LENGTH_SHORT).show();
             return false;
         }
-        else{
-            Toast.makeText(AdminLogIn.this,"Username or Password not recognised " , Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        return true;
+        
+        return adminchecker;
     }
 
     private void emptynametext() {

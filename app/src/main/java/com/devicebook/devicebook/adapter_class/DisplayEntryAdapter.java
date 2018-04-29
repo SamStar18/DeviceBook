@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.devicebook.devicebook.activities.DisplayGridActivity;
 import com.devicebook.devicebook.database.MyDatabase;
 import com.devicebook.devicebook.activities.LogInActivity;
 import com.devicebook.devicebook.objects.DisplayEntryObject;
@@ -285,7 +286,7 @@ public class DisplayEntryAdapter extends ArrayAdapter<DisplayEntryObject> {
                     return;
                 } else {
 
-                    Intent CustomerIntent = new Intent(view.getContext().getApplicationContext(), LogInActivity.class);
+                    Intent CustomerIntent = new Intent(view.getContext().getApplicationContext(), DisplayGridActivity.class);
 
 
                     // Toast.makeText(view.getContext(),"Data Saved",Toast.LENGTH_SHORT).show();

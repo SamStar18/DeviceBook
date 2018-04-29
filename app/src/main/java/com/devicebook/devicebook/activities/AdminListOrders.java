@@ -1,5 +1,6 @@
 package com.devicebook.devicebook.activities;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 public class AdminListOrders extends AppCompatActivity {
     MyDatabase dbhelper;
     SQLiteDatabase mDatabase;
-    EditText SearchFilter;
+
     ArrayList listorders = new ArrayList<>();
     private AdminAdapter totalOrderAdapter;
     @Override
@@ -31,23 +32,12 @@ public class AdminListOrders extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ListView total_order_listview = findViewById(R.id.adminlistview);
-        SearchFilter = findViewById(R.id.searchPlace);
-
-        // ArrayList ordersearch = new ArrayList<>();
-        // ordersearch.add("Phones");
-        //  ordersearch.add("Tablet");
-        //  ordersearch.add("Samsung");
-        // ordersearch.add("Apple");
-        // ordersearch.add("Phones");
-        // ordersearch.add("Phones");
-        // ordersearch.add("Phones");
-        // ordersearch.add("Phones");
-
-        //searchAdapter = new  ArrayAdapter(this, R.layout.admin_list_orders, ordersearch);
-        //total_order_listview.setAdapter(searchAdapter);
 
 
-        final String searchFilter = SearchFilter.getText().toString();
+
+
+
+
 
         dbhelper = new MyDatabase(AdminListOrders.this);
         mDatabase = dbhelper.getWritableDatabase();
@@ -62,24 +52,6 @@ public class AdminListOrders extends AppCompatActivity {
         total_order_listview.setAdapter(totalOrderAdapter);
 
 
-        SearchFilter.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                totalOrderAdapter.getFilter().filter(charSequence.toString());
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-
     }
 
     @Override
@@ -92,13 +64,13 @@ public class AdminListOrders extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
     public boolean onOptionsItemSelected(MenuItem item) {
-        //Intent menuintent = new Intent(AdminListOrders.this,DisplayGridActivity.class);
+        Intent menuintent = new Intent(AdminListOrders.this,DisplayGridActivity.class);
         switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
                 return true;
         }
-        // startActivity(menuintent);
+        startActivity(menuintent);
         return super.onOptionsItemSelected(item);
     }
 

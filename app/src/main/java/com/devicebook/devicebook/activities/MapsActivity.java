@@ -1,23 +1,17 @@
 package com.devicebook.devicebook.activities;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.net.Uri;
-import android.nfc.Tag;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -25,17 +19,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.devicebook.devicebook.R;
-import com.devicebook.devicebook.models.PlaceInfo;
+import com.devicebook.devicebook.objects.PlaceInfo;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -52,14 +45,12 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback,GoogleApiClient.OnConnectionFailedListener {
@@ -116,7 +107,7 @@ inputSearch.setOnItemClickListener(mAutocompleteListener);
 
 
             public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
-                if(actionId == EditorInfo.IME_ACTION_GO
+                if(actionId == EditorInfo.IME_ACTION_DONE
                         || actionId == EditorInfo.IME_ACTION_DONE
                         ||keyEvent.getAction() == KeyEvent.ACTION_DOWN
                         ||keyEvent.getAction() == KeyEvent.KEYCODE_ENTER){
@@ -154,6 +145,7 @@ list = geocoder.getFromLocationName(searchString, 1);
         moveCamera(new LatLng(address.getLatitude(),address.getLongitude()),DEFAULT_ZOOM,address.getAddressLine(0));
 
     }
+    hidesoftkeyboard();
 }
     private void getDeviceLocation() {
         //Log.d(TAG,"getDeviceLocation: getting current device currentlocation");
@@ -275,41 +267,9 @@ list = geocoder.getFromLocationName(searchString, 1);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                 new LatLng(-33.86997, 151.2089), 6));
         // Add a marker in Sydney and move the camera
-        LatLng pcworld = new LatLng(52.2476, -7.1236);
-        String pcmarker = String.valueOf(mMap.addMarker(new MarkerOptions().position(pcworld).title("Pc World Waterford")));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(pcworld));
 
-        LatLng harvey = new LatLng(52.2456, -7.1685);
-        String harvermarker = String.valueOf(mMap.addMarker(new MarkerOptions().position(harvey).title("Harvey Norman Waterford")));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(harvey));
-
-        LatLng ielectron = new LatLng(51.897, -8.4716);
-        String ielectronmarker = String.valueOf(mMap.addMarker(new MarkerOptions().position(ielectron).title("IElectron Cork City Ireland")));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(ielectron));
-
-        LatLng pairmobile = new LatLng(53.3934, -6.3904);
-        String pairmarker = String.valueOf(mMap.addMarker(new MarkerOptions().position(pairmobile).title("PAIR MOBILE Dublin Ireland")));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(pairmobile));
-
-        LatLng carphone = new LatLng(52.2614, -7.1118);
-        String carphonemarker = String.valueOf(mMap.addMarker(new MarkerOptions().position(carphone).title("Carphone Warehouse Waterford Ireland")));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(carphone));
         //float zoomLevel = 14;
         // Zoom in, animating the camera.
-
-
-
-        ArrayList<String> placelist = new ArrayList<>();
-
-        placelist.add(pcmarker);
-        placelist.add(harvermarker);
-        placelist.add(ielectronmarker);
-        placelist.add(pairmarker);
-        placelist.add(carphonemarker);
-
-        placeAdapter = new ArrayAdapter(this, R.layout.activity_store_finder, placelist);
-
-
 
     }
     @Override
@@ -346,14 +306,14 @@ list = geocoder.getFromLocationName(searchString, 1);
     private AdapterView.OnItemClickListener mAutocompleteListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-           hidesoftkeyboard();
+
 
            final AutocompletePrediction item = mplaceAutocompleteAdapter.getItem(i);
            final String placeId = item.getPlaceId();
 
             PendingResult<PlaceBuffer> placeResult = Places.GeoDataApi.getPlaceById(mGoogleApiClient, placeId);
             placeResult.setResultCallback(mUpdatePlacceDetailsCallback);
-
+hidesoftkeyboard();
         }
     };
 
@@ -380,9 +340,9 @@ list = geocoder.getFromLocationName(searchString, 1);
             }catch(NullPointerException e){
 
             }
-
-            moveCamera(new LatLng(place.getViewport().getCenter().latitude,place.getViewport().getCenter().longitude),DEFAULT_ZOOM,mPlace.getName());
             hidesoftkeyboard();
+            moveCamera(new LatLng(place.getViewport().getCenter().latitude,place.getViewport().getCenter().longitude),DEFAULT_ZOOM,mPlace.getName());
+
             places.release();
         }
     };

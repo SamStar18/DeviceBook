@@ -166,53 +166,6 @@ public class MyDatabase extends SQLiteOpenHelper {
 
 
 
-    public List<AdminObject> fetchorder(String orderSearch){
-
-
-        SQLiteDatabase db = getReadableDatabase();
-
-        String sortOrder = Username_column + "   ASC ";
-
-        //String[] selection = {Username_column,customerDevice_column,customerModel_column,customerFault_column};
-
-        String[] selectionArgs = {orderSearch};
-
-        String[] columns = {
-
-                Username_column,
-                customerDevice_column,
-                customerModel_column,
-                customerFault_column,
-
-        };
-        // sorting orders
-
-
-        Cursor cursor = db.query(TABLE_CUSTOMER, columns, null, selectionArgs, null, null, sortOrder);
-
-        List<AdminObject> OrderList = new ArrayList<AdminObject>();
-
-        if (cursor.moveToFirst()) {
-
-            do {
-                AdminObject order = new AdminObject();
-                order.setUserName1(cursor.getString(cursor.getColumnIndex(Username_column)));
-                order.setDeviceType1(cursor.getString(cursor.getColumnIndex(customerDevice_column)));
-                order.setDeviceModel1(cursor.getString(cursor.getColumnIndex(customerModel_column)));
-                order.setDeviceFault1(cursor.getString(cursor.getColumnIndex(customerFault_column)));
-
-
-
-                // Adding user record to list
-                OrderList.add(order);
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
-        db.close();
-
-        // return user list
-        return OrderList;
-    }
 
 
     public List<AdminObject> totalOrder() {
@@ -245,9 +198,6 @@ public class MyDatabase extends SQLiteOpenHelper {
                 order.setDeviceType1(cursor.getString(cursor.getColumnIndex(customerDevice_column)));
                 order.setDeviceModel1(cursor.getString(cursor.getColumnIndex(customerModel_column)));
                 order.setDeviceFault1(cursor.getString(cursor.getColumnIndex(customerFault_column)));
-
-
-
                 // Adding user record to list
                 OrderList.add(order);
             } while (cursor.moveToNext());
@@ -306,47 +256,6 @@ public class MyDatabase extends SQLiteOpenHelper {
     }
 
 
-    public Boolean checkdevice(String device) {
-        List<AdminObject> checklist = new ArrayList<AdminObject>();
-        String[] columns = {customerDevice_column};
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        String selection = customerDevice_column + " = ?";
-
-        String[] selectionArgs = {device};
-
-        Cursor cursor = db.query(TABLE_CUSTOMER, //Table to query
-                columns,                    //columns to return
-                selection,                  //columns for the WHERE clause
-                selectionArgs,              //The values for the WHERE clause
-                null,                       //group the rows
-                null,                      //filter by row groups
-                null);
-
-        if (cursor.moveToFirst()) {
-            do {
-                AdminObject customer = new AdminObject();
-                customer.setDeviceType1(cursor.getString(cursor.getColumnIndex(customerDevice_column)));
-
-                checklist.add(customer);
-            } while (cursor.moveToNext());
-        }
-        //The sort order
-        int cursorCount = cursor.getCount();
-        cursor.close();
-        db.close();
-
-        if (cursorCount < 1) {
-
-            return false;
-
-        } else {
-
-        }
-
-
-        return true;
-    }
 
 
     public int mobilecount() {
@@ -457,50 +366,6 @@ public class MyDatabase extends SQLiteOpenHelper {
         return id;
     }
 
-
-    public Boolean checkcustomerdelete(String id){
-        List<DisplayOrderObject> checklist = new ArrayList<DisplayOrderObject>();
-        String[] columns = {CustomerId_column};
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        String selection = CustomerId_column + " = ?";
-
-        String[] selectionArgs = {id};
-
-        Cursor cursor = db.query(TABLE_CUSTOMER, //Table to query
-                columns,                    //columns to return
-                selection,                  //columns for the WHERE clause
-                selectionArgs,              //The values for the WHERE clause
-                null,                       //group the rows
-                null,                      //filter by row groups
-                null);
-
-        if (cursor.moveToFirst()) {
-            do {
-                DisplayOrderObject customer = new DisplayOrderObject();
-                customer.setMyCustomerId(cursor.getString(cursor.getColumnIndex(CustomerId_column)));
-                checklist.add(customer);
-            } while (cursor.moveToNext());
-        }
-        //The sort order
-        int cursorCount = cursor.getCount();
-        cursor.close();
-        db.close();
-
-        if (cursorCount < 1) {
-            Toast.makeText(cscontext, "Double check entry ", Toast.LENGTH_SHORT).show();
-            return false;
-
-        }
-        else{
-
-        }
-
-
-
-
-        return true;
-    }
 
 
 

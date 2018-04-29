@@ -1,4 +1,4 @@
-package com.devicebook.devicebook.models;
+package com.devicebook.devicebook.objects;
 
 import com.google.android.gms.maps.model.LatLng;
 

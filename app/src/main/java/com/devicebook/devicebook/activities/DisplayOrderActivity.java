@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.devicebook.devicebook.adapter_class.DisplayOrderAdapter;
 import com.devicebook.devicebook.database.MyDatabase;
@@ -72,8 +74,29 @@ String findName = LogIntent.getStringExtra("Name");
     }
 
     public void delete(View view){
-        Intent gotoalter = new Intent(DisplayOrderActivity.this,DeleteActivity.class);
-        startActivity(gotoalter);
+TextView tvdeleteuser = findViewById(R.id.customerId);
+
+String deleteuser = tvdeleteuser.getText().toString();
+
+             try {
+                 dbHelper.deletecustomer(deleteuser);
+                 Toast.makeText(DisplayOrderActivity.this, "Order removed ", Toast.LENGTH_SHORT).show();
+                 Intent returntodatabase = new Intent(DisplayOrderActivity.this,LogInActivity.class);
+                 startActivity(returntodatabase);
+             }catch (Exception e){
+                 Toast.makeText(DisplayOrderActivity.this, "Unable to delete table ", Toast.LENGTH_SHORT).show();
+
+             }
+        //}
+
+
+        //else {
+           // Toast.makeText(DisplayOrderActivity.this, "Unable to delete table ", Toast.LENGTH_SHORT).show();
+
+
+       // }
+        //Intent gotoalter = new Intent(DisplayOrderActivity.this,DeleteActivity.class);
+        //startActivity(gotoalter);
     }
 
 
