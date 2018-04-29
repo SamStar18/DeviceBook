@@ -4,141 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.devicebook.devicebook.phone_avtivity">
+    tools:context="com.devicebook.devicebook.activities.DeviceEntryActivity">
 
-
-    <TextView
-        android:id="@+id/deviceTypeSubtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/devicetypesubtitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/deviceType"
         android:layout_width="0dp"
         android:layout_height="37dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/darker_gray"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/spinnerborder"
         android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deviceTypeSubtitle" />
-
-    <TextView
-        android:id="@+id/modelSubtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/modelSubtitle"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deviceBrand" />
+        app:layout_constraintTop_toBottomOf="@+id/DeviceSelectionSub" />
 
     <Spinner
         android:id="@+id/deviceModel"
         android:layout_width="0dp"
         android:layout_height="37dp"
-        android:layout_marginTop="10dp"
-        android:background="@android:color/darker_gray"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/spinnerborder"
         android:padding="8dp"
         android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/modelSubtitle" />
-
-    <TextView
-        android:id="@+id/makeSubtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/makeSubtitle"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deviceType" />
+        app:layout_constraintTop_toBottomOf="@+id/deviceBrand" />
 
     <Spinner
         android:id="@+id/deviceBrand"
         android:layout_width="0dp"
         android:layout_height="37dp"
-        android:layout_marginTop="10dp"
-        android:background="@android:color/darker_gray"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/spinnerborder"
         android:padding="8dp"
         android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/makeSubtitle" />
-
-    <TextView
-        android:id="@+id/faultSubtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/faultSubtitle"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deviceModel" />
+        app:layout_constraintTop_toBottomOf="@+id/deviceType" />
 
     <Spinner
         android:id="@+id/faultSpinner"
         android:layout_width="0dp"
         android:layout_height="37dp"
-        android:layout_marginTop="10dp"
-        android:background="@android:color/darker_gray"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/spinnerborder"
         android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/faultSubtitle" />
-
-    <TextView
-        android:id="@+id/deviceColor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/deviceColorSubtitle"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/faultSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/deviceModel" />
 
     <Spinner
         android:id="@+id/mycolorSpinner"
         android:layout_width="0dp"
         android:layout_height="37dp"
-        android:layout_marginTop="10dp"
-        android:background="@android:color/darker_gray"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/spinnerborder"
         android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deviceColor" />
+        app:layout_constraintTop_toBottomOf="@+id/faultSpinner" />
 
     <TextView
         android:id="@+id/deliverySubtitle"
@@ -146,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="24dp"
         android:text="@string/DeliverySubtitle"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -158,7 +92,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="24dp"
         android:orientation="horizontal"
         android:textAlignment="center"
         android:textSize="14sp"
@@ -172,13 +106,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-
-            android:buttonTint="@drawable/radioselector2"
+            android:buttonTint="@color/colorPrimary"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:text="@string/pickUpOption"
             android:textAlignment="center"
-            android:textColor="@drawable/radioselector2"
+            android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -187,13 +120,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:buttonTint="@drawable/radioselector2"
+            android:buttonTint="@color/colorPrimary"
             android:paddingLeft="5dp"
-
             android:paddingRight="5dp"
             android:text="@string/postOption"
             android:textAlignment="center"
-            android:textColor="@drawable/radioselector2"
+            android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold" />
     </RadioGroup>
@@ -202,7 +134,7 @@
         android:id="@+id/continueButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/buttonshape2"
         android:onClick="onContinueButtonPressed"
         android:padding="10dp"
@@ -214,7 +146,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/mycollectionOptions"
+        app:layout_constraintTop_toBottomOf="@+id/mycollectionOptions"
         app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/DeviceSelectionSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/DeviceSelectionSub"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

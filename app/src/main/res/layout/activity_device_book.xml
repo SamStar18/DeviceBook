@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.devicebook.devicebook.deviceBook">
+    tools:context="com.devicebook.devicebook.activities.MainActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -52,42 +52,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/shape"
+        android:onClick="bookbuttonpressed"
         android:padding="10dp"
         android:text="@string/bookButton"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-android:onClick="bookbuttonpressed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.789" />
-
-    <Button
-        android:id="@+id/exitButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/buttonshape2"
-        android:onClick="exitButton1pressed"
-        android:padding="10dp"
-        android:text="@string/exitButton1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-android:textColor="#ffffff"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/bookButton"
-        app:layout_constraintHorizontal_bias="0.377"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.789"
-        tools:text="@string/exitButton1" />
+        app:layout_constraintVertical_bias="0.816" />
 
     <ImageView
 

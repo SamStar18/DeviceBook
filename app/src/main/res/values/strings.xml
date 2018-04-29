@@ -5,62 +5,24 @@
     <string name="homeImg">Home Image</string>
     <string name="homeSubtitle">Booking your repair is now as easy as reading a book</string>
     <string name="bookButton">Enter</string>
-    <string name="exitButton1">Exit</string>
-    <string name="productHead">Select Your Device</string>
     <string name="optionsMenu">Options</string>
     <string name="phone_device">Phones</string>
     <string name="phone_captio">Mobile Phones</string>
-    <string name="menu_logo">Device Book</string>
-    <string name="makeSubtitle">Select Brand</string>
-    <string name="modelSubtitle">Select Model</string>
-    <string name="faultSubtitle">Fault Description</string>
-    <string name="deviceColorSubtitle">Device Color</string>
     <string name="pickUpOption">Courier Picks Up</string>
     <string name="postOption">Post it to us </string>
     <string name="DeliverySubtitle">How would you like us to recieve your device</string>
     <string name="continueButton">Continue</string>
-    <string name="tabletPickUp">Courier Pick Up</string>
-    <string name="tabletPost">Post it to us</string>
-    <string name="tabletContinue">Continue</string>
     <string name="productBanner">Product Banner</string>
     <string name="productBannerSubtitle">Please select your option</string>
-    <string name="tabletColor">Tablet Color</string>
-    <string name="tabletBrand">Tablet Brand</string>
-    <string name="tabletOperaringSystem">Tablet Operating System</string>
-    <string name="customerDetailsSubtitle">Customer Details</string>
-    <string name="nameSubtitle">Username: *Required to check orders</string>
-    <string name="nameHint">Enter your name</string>
-    <string name="mobileDetails">Customer\'s Last Name</string>
-    <string name="mobileHint">Enter contact number</string>
-    <string name="customerAddress1">Address line </string>
     <string name="address1">Enter address</string>
-    <string name="countrySubtitle">Country</string>
-    <string name="citySubtitle">City</string>
-    <string name="city">Enter City</string>
     <string name="pnuContinue">Continue</string>
-    <string name="summarySubtitle">Booking Summary</string>
-    <string name="devicetypesubtitle">Device Type</string>
-    <string name="emailSubtitle">Email</string>
-    <string name="csSumary">Customer Details</string>
-    <string name="bookingDetails">Booking Details</string>
-    <string name="csDetails">Customer Details</string>
-    <string name="csBookingDetails">Booking Details</string>
-    <string name="devicetTypeSummary">Device Type</string>
-    <string name="csDeviceType">Device</string>
-    <string name="csNameSummary">Name</string>
     <string name="csName">Username   </string>
 
     <string name="csNumber">Fullname: </string>
     <string name="csEmail">Email  </string>
 
-    <string name="csCity">City   </string>
-    <string name="csCountry">Country</string>
-    <string name="csName2">First Name:</string>
-    <string name="csPhoneNumber2">Last Name:</string>
     <string name="csEmail2">Email:</string>
 
-    <string name="csCity2">City:</string>
-    <string name="csCountry2">Country:</string>
     <string name="csAddress">Address</string>
     <string name="csAddress2">Address Line:</string>
     <string name="customerDetailsSummary">Please review your details before you proceed</string>
@@ -71,7 +33,6 @@
     <string name="csModel">Model </string>
 
     <string name="csRecieveMethod3">Recieve</string>
-    <string name="deviceColor">Color</string>
 
     <string name="csDeviceType2">Device</string>
     <string name="csBrand2">Brand</string>
@@ -82,18 +43,14 @@
     <string name="csContinueButton">Continue</string>
 
 
-    <string name="deviceRecieveMethod">Recieve</string>
     <string name="csFault">Fault</string>
     <string name="csDeletebtn1">Delete</string>
     <string name="csDeleteBtn2">Delete</string>
     <string name="orderIntro">Your device booking details are listed below:</string>
     <string name="personalIntro">Your personal details are</string>
     <string name="introBooking">Thank you for booking with DeviceBook</string>
-    <string name="customerName">First Name</string>
-    <string name="customerNumber">Last Name</string>
     <string name="customerEmail">Email</string>
     <string name="customerAddress">Address 1</string>
-    <string name="customerCity">city</string>
     <string name="customerCountry">Country</string>
     <string name="customerDeviceType">Device Type</string>
     <string name="customerBrandType">Brand</string>
@@ -102,18 +59,16 @@
     <string name="CustomerColorType">Color</string>
     <string name="CustomerRecieveType">Recieve</string>
     <string name="ChangeText">If you change your mind you can delete your order using button below</string>
-    <string name="DeleteOrder">Alter Order</string>
+    <string name="DeleteOrder">Delete</string>
     <string name="CustomerId">Customer Id</string>
     <string name="csId">Customer Id</string>
     <string name="logOnSub">Please Enter your Username </string>
-    <string name="nameEntryB">Enter</string>
     <string name="nameEntryButton">Enter</string>
-    <string name="altersub">Enter the ID of the table you would like to Alter</string>
-    <string name="alterEntry">Enter Name</string>
+    <string name="altersub">Enter user ID to delete</string>
+    <string name="alterEntry">ID</string>
     <string name="alterDeleteButton">Delete</string>
-    <string name="fname">Enter Username</string>
+    <string name="fname">Enter Username*</string>
     <string name="lname">Enter Full Name</string>
-    <string name="customerlName">Last Name</string>
     <string name="csidsub">Customer Id</string>
     <string name="csaddresssub">Address</string>
     <string name="fnamesub">Username</string>
@@ -125,79 +80,43 @@
     <string name="faultsub">Fault</string>
     <string name="colorsub">Color</string>
     <string name="collectionsub">Collection Option</string>
-    <string name="NameEntry">Name</string>
-    <string name="fullnamesub">Customer\'s Full Name</string>
+    <string name="NameEntry">Username</string>
     <string name="usernamesub">Username</string>
     <string name="csfullname">Full Name</string>
     <string name="customerFullName">Full Name</string>
     <string name="customerusername">Username</string>
+    <string name="Countryname">Country*</string>
+    <string name="CsCountryv">Country</string>
+    <string name="CsCountryh">Country</string>
+    <string name="DeviceSelectionSub">Please enter your device information</string>
+    <string name="Personalsub">Enter your personal details</string>
+    <string name="panelSub">Admin Panel</string>
+    <string name="mobilerepairsub">Mobile repair</string>
+    <string name="tabletrepairsub">Tablet repair</string>
+
+    <string name="totalrepairsub">Total repairs</string>
+
+    <string name="mobilerepaircount">Phone</string>
+    <string name="tabletrepaircount">Tablet</string>
+    <string name="totalrepair">totalrepair</string>
 
 
-    <string-array name="phoneMakes">
-        <item>Phone make</item>
-        <item>Samsung</item>
-        <item>Apple</item>
+    <!-- TODO: Remove or change this placeholder text -->
 
-        <item>Lg</item>
-        <item>Google</item>
-        <item>Sony</item>
-
-    </string-array>
-
-
-    <string-array name="samsungModel">
-        <item>Model</item>
-        <item>Samsung Galaxy S8</item>
-        <item>Samsung Galaxy S7</item>
-        <item>Samsung Galaxy S6</item>
-        <item>Samsung Galaxy S5</item>
-        <item>Samsung Galaxy J5</item>
-        <item>Samsung Galaxy J3</item>
-        <item>Samsung Galaxy A3</item>
-
-    </string-array>
-
-    <string-array name="appleModel">
-        <item>Model</item>
-        <item>Iphone X</item>
-        <item>Iphone 8</item>
-        <item>Iphone 6</item>
-        <item>Iphone 5</item>
-        <item>Iphone 4</item>
-        <item>Iphone SE</item>
-
-    </string-array>
-
-    <string-array name="lgModel">
-        <item>Model</item>
-        <item>Lg k10</item>
-        <item>Lg k8</item>
-        <item>Lg G6</item>
-        <item>Lg G5</item>
-        <item>Lg G4</item>
-
-    </string-array>
-
-    <string-array name="googleModel">
-        <item>Model</item>
-        <item>Google XL 2</item>
-        <item>Google XL</item>
-        <item>Google X 3</item>
-        <item>Google X </item>
-        <item>Google X 2</item>
-        <item>Google X</item>
-
-    </string-array>
-
-    <string-array name="sonyModel">
-        <item>Model</item>
-        <item>Sony XY</item>
-        <item>Sony XZ</item>
-        <item>Sony Z4</item>
-        <item>Sony Z3 </item>
-        <item>Sony Z2</item>
-        <item>Sony Z</item>
-
-    </string-array>
+    <string name="adminpanelsub">Admin Panel</string>
+    <string name="entrysub">Enter details below</string>
+    <string name="adminusername">Username</string>
+    <string name="adminpassword">Password</string>
+    <string name="adminenter">Login</string>
+    <string name="userSub">Username</string>
+    <string name="deviceSub">Device</string>
+    <string name="modelSub">Model</string>
+    <string name="faultSub">Fault</string>
+    <string name="mobilebutton">View Total Orders</string>
+    <string name="infosub">Repair Info</string>
+    <string name="repaircount">Repair Count</string>
+    <string name="totalOsub">Total Orders</string>
+    <string name="searchSub">Search</string>
+    <string name="input_search">Enter Address or City</string>
 
 </resources>

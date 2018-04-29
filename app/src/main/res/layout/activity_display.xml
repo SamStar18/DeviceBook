@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:adjustViewBounds="true"
-    tools:context="com.devicebook.devicebook.displayActivity">
+    tools:context="com.devicebook.devicebook.activities.DisplayEntryActivity">
 
     <ListView
         android:id="@+id/customerListView"

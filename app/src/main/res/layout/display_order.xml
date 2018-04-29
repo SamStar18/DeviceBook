@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:adjustViewBounds="true"
-    tools:context=".Display_Order_Activity"
-    >
+    tools:context=".activities.DisplayOrderActivity">
 
     <TextView
         android:id="@+id/introBooking"
@@ -81,30 +80,17 @@
         app:layout_constraintTop_toBottomOf="@+id/customerEmail" />
 
     <TextView
-        android:id="@+id/customerCity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/customerCity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customerAddress" />
-
-    <TextView
         android:id="@+id/customerCountry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:text="@string/customerCountry"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/customerCity" />
+        app:layout_constraintTop_toBottomOf="@+id/customerAddress" />
 
     <TextView
         android:id="@+id/orderIntro2"
@@ -287,7 +273,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lnamesub" />
 
     <TextView
-        android:id="@+id/devicesub"
+        android:id="@+id/devicesubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -310,10 +296,10 @@
         app:layout_constraintEnd_toStartOf="@+id/customerBrand"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/devicesub" />
+        app:layout_constraintTop_toBottomOf="@+id/devicesubtitle" />
 
     <TextView
-        android:id="@+id/faultsub"
+        android:id="@+id/faultSub1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -336,7 +322,7 @@
         app:layout_constraintEnd_toStartOf="@+id/customerColor"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/faultsub" />
+        app:layout_constraintTop_toBottomOf="@+id/faultSub1" />
 
     <TextView
         android:id="@+id/modelsub"

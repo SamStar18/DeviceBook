@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.devicebook.devicebook.deleteandupdate">
+    tools:context="com.devicebook.devicebook.activities.DeleteActivity">
 
     <TextView
         android:id="@+id/altersub"
@@ -15,6 +15,7 @@
         android:layout_marginTop="248dp"
         android:text="@string/altersub"
         android:textAlignment="center"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
